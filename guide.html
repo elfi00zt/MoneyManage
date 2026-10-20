@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>使い方 — まねまね(MoneyManage)</title>
+  <meta name="description" content="まねまね(MoneyManage) の使い方。起動、初回セットアップ、明細の登録、給料日ごとの期間と繰越、固定費、集計、バックアップ、Excel の書き出し・取り込みまで。">
+  <meta name="theme-color" content="#1b2a41">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="使い方 — まねまね(MoneyManage)">
+  <meta property="og:image" content="assets/img/ogp.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/icon-256.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="まねまね(MoneyManage) トップへ">
+        <img src="assets/img/icon-64.png" alt="" width="32" height="32">
+        <span>まねまね <span class="brand-sub">MoneyManage</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="サイト内">
+        <ul>
+          <li><a href="index.html#features">特長</a></li>
+          <li><a href="index.html#screens">画面</a></li>
+          <li><a href="index.html#start">はじめかた</a></li>
+          <li><a href="guide.html" aria-current="page">使い方</a></li>
+          <li><a href="index.html#changelog">更新履歴</a></li>
+          <li><a href="index.html#download">ダウンロード</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-small header-cta" href="index.html#download" data-download data-label-ready="ダウンロード" data-label-pending="ダウンロード"><span data-download-label>ダウンロード</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container page-head">
+      <span class="eyebrow">GUIDE</span>
+      <h1>使い方</h1>
+      <p>この内容は、アプリのメニュー「ヘルプ」→「使い方…」（<kbd>F1</kbd>）でも確認できます。</p>
+    </div>
+
+    <div class="container guide-layout">
+      <nav class="toc" aria-label="目次">
+        <p>目次</p>
+        <ol>
+          <li><a href="#requirements">動作環境</a></li>
+          <li><a href="#install">ダウンロードと起動</a></li>
+          <li><a href="#setup">初回セットアップ</a></li>
+          <li><a href="#screen">メイン画面の見方</a></li>
+          <li><a href="#entries">明細の登録・編集</a></li>
+          <li><a href="#period">新しい期間と繰越</a></li>
+          <li><a href="#fixed">固定費</a></li>
+          <li><a href="#reports">集計（グラフ・年間）</a></li>
+          <li><a href="#masters">カテゴリ・支払方法</a></li>
+          <li><a href="#backup">バックアップと PC の移行</a></li>
+          <li><a href="#excel">Excel の書き出し・取り込み</a></li>
+          <li><a href="#keys">キーボードの操作</a></li>
+          <li><a href="#data">データの保存場所・削除</a></li>
+          <li><a href="#trouble">困ったとき</a></li>
+        </ol>
+      </nav>
+
+      <article class="guide-body">
+        <section id="requirements" aria-labelledby="h-requirements">
+          <h2 id="h-requirements">動作環境</h2>
+          <ul data-list="app.requirements">
+            <li>Windows（64bit）</li>
+            <li>Java のインストールは不要（アプリに同梱）</li>
+            <li>ディスクの空き容量 約 200MB（展開後）</li>
+          </ul>
+          <p>動作確認済み: <span data-config="app.testedOn">Windows 11 Home（64bit）</span></p>
+        </section>
+
+        <section id="install" aria-labelledby="h-install">
+          <h2 id="h-install">ダウンロードと起動</h2>
+          <ol>
+            <li><a href="index.html#download">ダウンロード</a> から ZIP ファイルを入手します。</li>
+            <li>ZIP を右クリックして「すべて展開」を選びます。</li>
+            <li>展開した <code>Manemane</code> フォルダの中の <code>Manemane.exe</code> をダブルクリックします。</li>
+          </ol>
+          <p class="callout"><code>Manemane</code> フォルダの中身は、まとめて置いたまま使ってください。<code>Manemane.exe</code> だけを別の場所に移すと起動しません。デスクトップから起動したい場合は、ショートカットを作成してください。</p>
+          <p>初回起動時に「Windows によって PC が保護されました」と表示された場合は、「詳細情報」→「実行」を選んでください。署名のない個人開発のアプリのため表示されます。</p>
+        </section>
+
+        <section id="setup" aria-labelledby="h-setup">
+          <h2 id="h-setup">初回セットアップ</h2>
+          <p>初めて起動すると、次の2つを設定する画面が表示されます。</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">項目</th><th scope="col">内容</th></tr></thead>
+              <tbody>
+                <tr><td>通常の給料日</td><td>毎月の給料日（例: 25日）。土日の場合は直前の金曜日として扱います。</td></tr>
+                <tr><td>最初の期間の開始日</td><td>直近の給料日が入っています。この日より前の明細は登録できません。</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>最初の期間の「前期繰越」は 0 円で始まります。これまでの家計簿から引き継ぐ金額がある場合は、メイン画面の「前期繰越」カードの「編集」で入力してください（不足している場合はマイナス）。</p>
+        </section>
+
+        <section id="screen" aria-labelledby="h-screen">
+          <h2 id="h-screen">メイン画面の見方</h2>
+          <figure>
+            <img src="assets/img/screens/main.png" width="1398" height="817" loading="lazy" alt="メイン画面">
+            <figcaption>メイン画面（金額は説明用の架空のデータです）</figcaption>
+          </figure>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">表示</th><th scope="col">内容</th></tr></thead>
+              <tbody>
+                <tr><td>期間</td><td>給料日から次の給料日の前日まで。最新の期間の終了日は「次の給料日（予定）の前日」で、（予定）と表示されます。</td></tr>
+                <tr><td>収入</td><td>期間内の収入の合計</td></tr>
+                <tr><td>前期繰越</td><td>前の期間の残額（不足ならマイナス）</td></tr>
+                <tr><td>利用可能金額</td><td>収入 ＋ 前期繰越</td></tr>
+                <tr><td>固定費・変動費・投資・積立</td><td>期間内のそれぞれの合計</td></tr>
+                <tr><td>残額</td><td>利用可能金額 − 固定費 − 変動費 − 投資・積立。マイナスのときは赤く表示されます。</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>右側には、今期と前期の支出、カテゴリ別の支出のグラフが表示されます。明細の一覧は「全て／収入／固定費／変動費／投資・積立」で絞り込めます。</p>
+        </section>
+
+        <section id="entries" aria-labelledby="h-entries">
+          <h2 id="h-entries">明細の登録・編集</h2>
+          <p>「+ 支出」または「+ 収入」を押して入力し、「保存」を押します。</p>
+          <figure>
+            <img src="assets/img/screens/entry.png" width="460" height="422" loading="lazy" alt="支出を追加する画面">
+          </figure>
+          <ul>
+            <li><strong>区分</strong> … 支出は「固定費／変動費／投資・積立」、収入は「固定／変動」。</li>
+            <li><strong>項目</strong> … 入力すると過去の項目名が候補に出ます。候補を選ぶと、前回のカテゴリと支払方法が入ります。</li>
+            <li><strong>保存して続けて入力</strong> … 日付と区分を残したまま、次の明細を入力できます。</li>
+          </ul>
+          <h3>編集・削除・複製</h3>
+          <ul>
+            <li>編集: 行をダブルクリック、または行を選んで <kbd>Enter</kbd></li>
+            <li>削除: 行を選んで <kbd>Delete</kbd>（確認が表示されます）</li>
+            <li>複製: 行を右クリック →「複製して追加」</li>
+          </ul>
+          <p class="callout">電子マネー（PayPay・交通系 IC など）は「チャージした金額」を支出として登録し、カテゴリを「電子マネーチャージ」にします。チャージ残高から払った買い物は、二重になるため登録しません。</p>
+        </section>
+
+        <section id="period" aria-labelledby="h-period">
+          <h2 id="h-period">新しい期間と繰越</h2>
+          <h3>給料が入ったら</h3>
+          <p>「新しい期間を開始」を押します。給料日には次の給料日の予定日が入っています（実際の給料日と違えば変更します）。確定する期間と繰り越す金額を確認して「開始」を押してください。</p>
+          <p>「有効な固定費を新しい期間に反映する」にチェックがあると、登録済みの固定費が新しい期間に自動で登録されます。</p>
+          <h3>繰越</h3>
+          <p>期間の残額は、プラスもマイナスも次の期間の「前期繰越」へ自動で引き継がれます。「前期繰越」カードの「編集」から手入力で上書きでき、「自動計算」に戻すこともできます。</p>
+        </section>
+
+        <section id="fixed" aria-labelledby="h-fixed">
+          <h2 id="h-fixed">固定費</h2>
+          <p>メニュー「管理」→「固定費…」で、家賃・サブスク・積立などを登録します。項目名・区分（固定費／投資・積立）・金額・支払日（毎月◯日）・カテゴリ・支払方法を設定できます。</p>
+          <p>メイン画面の「固定費を反映」で、表示中の期間に明細として登録します。支払日は期間内の日付に置き換えられ（例: 期間 9/25〜10/22 で 27日払い → 9/27）、同じ期間に二重に登録されることはありません。</p>
+        </section>
+
+        <section id="reports" aria-labelledby="h-reports">
+          <h2 id="h-reports">集計（グラフ・年間）</h2>
+          <p>メイン画面の右側で、今期・前期の支出と前期との差、カテゴリ別の支出（金額と割合）を確認できます。</p>
+          <h3>年間の収支</h3>
+          <p>メニュー「集計」→「年間の収支…」で、1月1日〜12月31日の収入合計・支出合計・収支と、月別の表を確認できます。給料日の期間ではなく、明細の日付で集計します（繰越は含みません）。</p>
+          <figure>
+            <img src="assets/img/screens/year.png" width="880" height="851" loading="lazy" alt="年間の収支の画面">
+          </figure>
+        </section>
+
+        <section id="masters" aria-labelledby="h-masters">
+          <h2 id="h-masters">カテゴリ・支払方法</h2>
+          <p>メニュー「管理」→「カテゴリ・支払方法…」で、追加・名前の変更・並べ替え・削除ができます。明細や固定費で使われているものは、削除の代わりに「無効」になります（過去の明細には残り、新しい入力の選択肢から消えます）。「無効も表示」にチェックすると、有効に戻せます。</p>
+        </section>
+
+        <section id="backup" aria-labelledby="h-backup">
+          <h2 id="h-backup">バックアップと PC の移行</h2>
+          <ul>
+            <li><strong>バックアップ</strong> … メニュー「ファイル」→「バックアップ…」で保存先を選びます。USB メモリやクラウドのフォルダに定期的に保存しておくと安心です。</li>
+            <li><strong>復元</strong> … メニュー「ファイル」→「バックアップから復元…」でファイルを選びます。中身（明細の件数など）を確認してから置き換えます。置き換える前のデータは自動で保存されます。</li>
+          </ul>
+          <h3>パソコンを買い替えるとき</h3>
+          <ol>
+            <li>古いパソコンでバックアップを作ります。</li>
+            <li>新しいパソコンでアプリを起動します（初回セットアップの内容は何でも構いません）。</li>
+            <li>「バックアップから復元…」で 1. のファイルを選びます。</li>
+          </ol>
+        </section>
+
+        <section id="excel" aria-labelledby="h-excel">
+          <h2 id="h-excel">Excel の書き出し・取り込み</h2>
+          <p><strong>書き出し</strong> … メニュー「ファイル」→「Excel に書き出す…」。「表示中の期間」か「すべての期間」を選ぶと、「明細」「集計」「カテゴリ別」の3つのシートができます。</p>
+          <p><strong>取り込み</strong> … メニュー「ファイル」→「Excel から取り込む…」。取り込む前に、取り込める行・取り込めない行（理由付き）・既存の明細と重複の可能性がある行を確認できます。</p>
+          <h3>取り込むファイルの形式</h3>
+          <p>読み込むのは「明細」シートだけです（なければ最初のシート）。1行目が見出し、2行目からが明細です。列の順番は自由です。</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">列名</th><th scope="col">必須</th><th scope="col">書き方</th></tr></thead>
+              <tbody>
+                <tr><td>日付</td><td>○</td><td>2026/10/04 など（Excel の日付でも可）</td></tr>
+                <tr><td>種類</td><td>○</td><td>収入／支出／投資・積立</td></tr>
+                <tr><td>項目</td><td>○</td><td>例: スーパー</td></tr>
+                <tr><td>金額</td><td>○</td><td>整数の円（1,200 や 1200円 も可）</td></tr>
+                <tr><td>カテゴリ</td><td>○</td><td>アプリに登録済みの名前と同じにする</td></tr>
+                <tr><td>固定/変動</td><td></td><td>固定／変動（空欄なら変動）</td></tr>
+                <tr><td>支払方法</td><td></td><td>登録済みの名前（収入の行は空欄）</td></tr>
+                <tr><td>メモ</td><td></td><td>自由</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="callout">いちばん確実なのは、一度書き出したファイルの「明細」シートをひな形にして、行を書き足す方法です。</p>
+        </section>
+
+        <section id="keys" aria-labelledby="h-keys">
+          <h2 id="h-keys">キーボードの操作</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">キー</th><th scope="col">操作</th></tr></thead>
+              <tbody>
+                <tr><td><kbd>F1</kbd></td><td>使い方を表示</td></tr>
+                <tr><td><kbd>Ctrl</kbd> + <kbd>N</kbd></td><td>支出を追加</td></tr>
+                <tr><td><kbd>Ctrl</kbd> + <kbd>I</kbd></td><td>収入を追加</td></tr>
+                <tr><td><kbd>Alt</kbd> + <kbd>←</kbd> / <kbd>→</kbd></td><td>前の期間／次の期間</td></tr>
+                <tr><td><kbd>Enter</kbd>（一覧で）</td><td>選んだ明細を編集</td></tr>
+                <tr><td><kbd>Delete</kbd>（一覧で）</td><td>選んだ明細を削除</td></tr>
+                <tr><td><kbd>Esc</kbd></td><td>入力画面を閉じる</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="data" aria-labelledby="h-data">
+          <h2 id="h-data">データの保存場所・削除</h2>
+          <p>データは <code>%APPDATA%\Manemane\kakeibo.db</code> に保存されます（エクスプローラーのアドレス欄に <code>%APPDATA%\Manemane</code> と入力すると開けます）。インターネットへの送信は行いません。</p>
+          <p>アプリを削除するときは <code>Manemane</code> フォルダを削除してください。データも消す場合は、上の保存場所のフォルダも削除します。</p>
+        </section>
+
+        <section id="trouble" aria-labelledby="h-trouble">
+          <h2 id="h-trouble">困ったとき</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">症状</th><th scope="col">対処</th></tr></thead>
+              <tbody>
+                <tr><td>起動しない</td><td><code>Manemane.exe</code> と同じ場所に <code>app</code>・<code>runtime</code> フォルダがあるか確認してください。</td></tr>
+                <tr><td>アイコンが古いまま</td><td>エクスプローラーで <kbd>F5</kbd> を押すか、フォルダを開き直してください。</td></tr>
+                <tr><td>「新しいバージョンのアプリで作成されています」</td><td>新しいバージョンで保存されたデータです。アプリを更新してください。</td></tr>
+                <tr><td>明細が登録できない（日付のエラー）</td><td>最初の期間の開始日より前の日付は登録できません。</td></tr>
+                <tr><td>Excel が取り込めない</td><td>Excel でそのファイルを開いている場合は閉じてください。確認画面の「理由」に原因が表示されます。</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/img/icon-64.png" alt="" width="32" height="32">
+            <span>まねまね <span class="brand-sub">MoneyManage</span></span>
+          </a>
+          <p>給料日ベースの Windows 用家計簿アプリ。個人開発のソフトウェアです。</p>
+        </div>
+        <nav aria-label="フッター">
+          <ul class="footer-links">
+            <li><a href="index.html#features">特長</a></li>
+            <li><a href="guide.html">使い方</a></li>
+            <li><a href="index.html#changelog">更新履歴</a></li>
+            <li><a href="index.html#download">ダウンロード</a></li>
+            <li data-optional="project.repositoryUrl" hidden><a data-href="project.repositoryUrl" href="#">GitHub</a></li>
+            <li data-optional="project.contactUrl" hidden><a data-href="project.contactUrl" href="#">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="copyright">
+        © <span data-current-year>2026</span> <span data-config="project.author" data-fallback="まねまね(MoneyManage)">まねまね(MoneyManage)</span>
+        <span data-optional="project.license" hidden> ・ <span data-config="project.license"></span></span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

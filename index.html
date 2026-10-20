@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>まねまね(MoneyManage) — 給料日ベースの Windows 用家計簿アプリ</title>
+  <meta name="description" content="まねまね(MoneyManage) は、給料日から次の給料日の前日までを1つの期間として、収入・支出・繰越を管理する Windows 用の家計簿アプリです。データはパソコンの中だけに保存されます。">
+  <meta name="theme-color" content="#1b2a41">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="まねまね(MoneyManage)">
+  <meta property="og:description" content="給料日から次の給料日まで。お金の流れを、ひと目で。Windows 用の家計簿アプリ。">
+  <meta property="og:image" content="assets/img/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/icon-256.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="まねまね(MoneyManage) トップへ">
+        <img src="assets/img/icon-64.png" alt="" width="32" height="32">
+        <span>まねまね <span class="brand-sub">MoneyManage</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="サイト内">
+        <ul>
+          <li><a href="#features">特長</a></li>
+          <li><a href="#screens">画面</a></li>
+          <li><a href="#start">はじめかた</a></li>
+          <li><a href="guide.html">使い方</a></li>
+          <li><a href="#changelog">更新履歴</a></li>
+          <li><a href="#download">ダウンロード</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-small header-cta" href="#download" data-download data-label-ready="ダウンロード" data-label-pending="ダウンロード"><span data-download-label>ダウンロード</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ヒーロー -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Windows 用の家計簿アプリ</span>
+          <h1 id="hero-title"><span class="nowrap">給料日から、</span><span class="nowrap">次の給料日まで。</span><br><span class="nowrap">お金の流れを、</span><span class="nowrap">ひと目で。</span></h1>
+          <p class="hero-lead">まねまね(MoneyManage) は、月ではなく「給料日」を区切りにして収入・支出・繰越を管理する家計簿です。使える金額と残りがすぐに分かり、余った分も足りない分も、次の期間へ自動で引き継ぎます。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-large" href="#download" data-download data-label-pending="ダウンロードについて">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+              <span data-download-label>ダウンロードについて</span>
+            </a>
+            <a class="btn btn-secondary btn-large" href="guide.html">使い方を見る</a>
+          </div>
+          <ul class="hero-meta">
+            <li>バージョン <span data-config="release.version">0.1.0</span></li>
+            <li>データはパソコンの中だけに保存</li>
+            <li>Java のインストール不要</li>
+          </ul>
+        </div>
+        <figure class="shot-frame">
+          <img src="assets/img/screens/main.png" width="1398" height="817"
+               alt="まねまね(MoneyManage) のメイン画面。期間 2026/09/25〜10/22 の収入・前期繰越・利用可能金額・固定費・変動費・投資・積立・残額のカードと、明細の一覧、カテゴリ別の支出グラフが表示されている">
+        </figure>
+      </div>
+    </section>
+
+    <!-- 特長 -->
+    <section class="section section-alt" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FEATURES</span>
+          <h2 id="features-title">毎日の記録と、給料日のサイクルに合わせた集計を</h2>
+          <p>入力は手早く、確認はひと目で。家計簿を続けるための機能をそろえています。</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+            <h3>給料日で区切る期間管理</h3>
+            <p>給料日から次の給料日の前日までが1つの期間。土日の給料日は直前の金曜日として扱います。</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h12M12 6l6 6-6 6"/><path d="M20 5v14"/></svg></span>
+            <h3>残額を自動で繰り越し</h3>
+            <p>期間の残額は、プラスもマイナスも次の期間の「前期繰越」へ。必要なら手入力で上書きもできます。</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/><path d="M18 16l2 2 3-4"/></svg></span>
+            <h3>固定費をまとめて反映</h3>
+            <p>家賃やサブスク、積立を登録しておけば、新しい期間を始めるときに明細へまとめて登録します。</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+            <h3>カテゴリ別・年間の集計</h3>
+            <p>期間ごとのカテゴリ別の支出と前期比較、1月〜12月の年間収支を確認できます。</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8l8 8M16 8l-8 8"/></svg></span>
+            <h3>Excel に書き出し・取り込み</h3>
+            <p>明細・集計・カテゴリ別を Excel に書き出し。同じ形式のファイルから明細を取り込めます。</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <h3>データは手元に。バックアップも簡単</h3>
+            <p>インターネットに送信せず、パソコン内に保存。バックアップと復元で PC の移行もできます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 画面 -->
+    <section class="section" id="screens" aria-labelledby="screens-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">SCREENS</span>
+          <h2 id="screens-title">アプリの画面</h2>
+          <p>画像を選ぶと拡大して表示します。画面の金額はすべて説明用の架空のデータです。</p>
+        </div>
+        <div class="screens">
+          <figure class="screen screen-wide">
+            <button type="button" data-zoom="メイン画面">
+              <img src="assets/img/screens/main.png" width="1398" height="817" loading="lazy"
+                   alt="メイン画面。上部に期間、カードに収入・前期繰越・利用可能金額・固定費・変動費・投資・積立・残額、下に明細の一覧と分析パネル">
+            </button>
+            <figcaption><strong>メイン画面</strong>期間の残額と、収入・支出の内訳、明細、カテゴリ別の支出を1画面で確認できます。</figcaption>
+          </figure>
+          <figure class="screen">
+            <button type="button" data-zoom="明細の入力">
+              <img src="assets/img/screens/entry.png" width="460" height="422" loading="lazy"
+                   alt="支出を追加する画面。種類・区分・日付・金額・項目・カテゴリ・支払方法・メモの入力欄">
+            </button>
+            <figcaption><strong>明細の入力</strong>項目名を入力すると過去の内容から候補を表示します。</figcaption>
+          </figure>
+          <figure class="screen">
+            <button type="button" data-zoom="年間の収支">
+              <img src="assets/img/screens/year.png" width="880" height="851" loading="lazy"
+                   alt="年間の収支の画面。収入合計・支出合計・収支と、1月〜12月の月別の表">
+            </button>
+            <figcaption><strong>年間の収支</strong>1月〜12月の月別の収入・支出と年間の合計。</figcaption>
+          </figure>
+          <figure class="screen">
+            <button type="button" data-zoom="アプリ内の使い方">
+              <img src="assets/img/screens/help.png" width="980" height="671" loading="lazy"
+                   alt="アプリ内の使い方の画面。左に目次、右に説明">
+            </button>
+            <figcaption><strong>アプリ内の使い方</strong>メニューの「ヘルプ」または F1 キーで、いつでも確認できます。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- はじめかた -->
+    <section class="section section-alt" id="start" aria-labelledby="start-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">GETTING STARTED</span>
+          <h2 id="start-title">はじめかた</h2>
+          <p>インストールは不要です。ダウンロードして展開すれば、すぐに使い始められます。</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>ZIP をダウンロード</h3>
+            <p>Windows 用の ZIP ファイルをダウンロードします。</p>
+          </li>
+          <li>
+            <h3>展開して起動</h3>
+            <p>ZIP を右クリックして「すべて展開」。<code>Manemane</code> フォルダの <code>Manemane.exe</code> をダブルクリックします。</p>
+          </li>
+          <li>
+            <h3>給料日を設定</h3>
+            <p>初回だけ、通常の給料日と最初の期間の開始日を設定します。あとは明細を入力するだけです。</p>
+          </li>
+        </ol>
+        <p class="section-foot"><a href="guide.html">詳しい使い方を見る →</a></p>
+      </div>
+    </section>
+
+    <!-- ダウンロード -->
+    <section class="section" id="download" aria-labelledby="download-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">DOWNLOAD</span>
+          <h2 id="download-title">ダウンロード</h2>
+          <p>無料でお使いいただけます。</p>
+        </div>
+        <div class="download-panel">
+          <div class="download-main">
+            <h3>Windows 版</h3>
+            <p class="version">バージョン <span data-config="release.version">0.1.0</span><span data-optional="release.releaseDate">（<span data-config="release.releaseDate" data-config-format="date"></span> 公開）</span></p>
+            <a class="btn btn-primary btn-large" data-download data-download-final data-label-ready="Windows 版をダウンロード（ZIP）" aria-disabled="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+              <span data-download-label>公開準備中</span>
+            </a>
+            <p class="status-note" data-when-unpublished>現在、一般公開の準備中です。公開後、このボタンからダウンロードできるようになります。</p>
+            <p class="status-note" hidden data-optional="release.releasesPageUrl">過去のバージョンは <a data-href="release.releasesPageUrl" href="#">リリース一覧</a> から入手できます。</p>
+          </div>
+          <div>
+            <dl class="spec">
+              <dt>ファイル</dt>
+              <dd><code data-config="release.fileName">Manemane-0.1.0-windows.zip</code></dd>
+              <dt>サイズ</dt>
+              <dd data-config="release.fileSizeBytes" data-config-format="size">89.6 MB</dd>
+              <dt>形式</dt>
+              <dd>ZIP（展開して使う形式。インストーラーではありません）</dd>
+              <dt>動作確認</dt>
+              <dd data-config="app.testedOn">Windows 11 Home（64bit）</dd>
+              <dt>SHA-256</dt>
+              <dd><code data-config="release.sha256">3a9b03c07dacbce3ed6920dcce1831fdbc7c2b02dcf9fced8e0aaf25c899b29b</code></dd>
+            </dl>
+            <ul class="notes">
+              <li>Java などを別にインストールする必要はありません（アプリに同梱しています）。</li>
+              <li>展開した <code>Manemane</code> フォルダの中身は、まとめて置いたまま使ってください。</li>
+              <li>初回起動時に「Windows によって PC が保護されました」と表示された場合は、「詳細情報」→「実行」を選んでください（署名のない個人開発のアプリのため表示されます）。</li>
+              <li>データは <code>%APPDATA%\Manemane</code> に保存されます。アプリを新しくしても引き継がれます。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 更新履歴 -->
+    <section class="section section-alt" id="changelog" aria-labelledby="changelog-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">CHANGELOG</span>
+          <h2 id="changelog-title">更新履歴</h2>
+        </div>
+        <ol class="changelog" data-changelog>
+          <li class="release">
+            <div><span class="release-version">v0.1.0</span><span class="release-date">未公開</span></div>
+            <ul><li>最初のバージョン</li></ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- よくある質問 -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container-text">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2 id="faq-title">よくある質問</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>料金はかかりますか？</summary>
+            <div class="answer"><p>無料です。</p></div>
+          </details>
+          <details>
+            <summary>データはどこに保存されますか？外部に送信されますか？</summary>
+            <div class="answer">
+              <p>パソコンの <code>%APPDATA%\Manemane\kakeibo.db</code> に保存されます。インターネットへの送信は行いません。</p>
+            </div>
+          </details>
+          <details>
+            <summary>Mac やスマートフォンで使えますか？</summary>
+            <div class="answer"><p>現在は Windows 版のみです。</p></div>
+          </details>
+          <details>
+            <summary>別のパソコンにデータを移せますか？</summary>
+            <div class="answer">
+              <p>移せます。古いパソコンで「ファイル」→「バックアップ…」を実行し、新しいパソコンで「ファイル」→「バックアップから復元…」を選んでください。</p>
+            </div>
+          </details>
+          <details>
+            <summary>Excel で管理していた家計簿から移行できますか？</summary>
+            <div class="answer">
+              <p>アプリが書き出す Excel と同じ形式（「明細」シート）にすれば取り込めます。取り込む前に、取り込める行・取り込めない行を確認できます。形式は <a href="guide.html#excel">使い方の「Excel」</a> を参照してください。</p>
+            </div>
+          </details>
+          <details>
+            <summary>アンインストールの方法は？</summary>
+            <div class="answer">
+              <p><code>Manemane</code> フォルダを削除してください。データも消す場合は <code>%APPDATA%\Manemane</code> フォルダも削除します。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/img/icon-64.png" alt="" width="32" height="32">
+            <span>まねまね <span class="brand-sub">MoneyManage</span></span>
+          </a>
+          <p>給料日ベースの Windows 用家計簿アプリ。個人開発のソフトウェアです。</p>
+        </div>
+        <nav aria-label="フッター">
+          <ul class="footer-links">
+            <li><a href="#features">特長</a></li>
+            <li><a href="guide.html">使い方</a></li>
+            <li><a href="#changelog">更新履歴</a></li>
+            <li><a href="#download">ダウンロード</a></li>
+            <li data-optional="project.repositoryUrl" hidden><a data-href="project.repositoryUrl" href="#">GitHub</a></li>
+            <li data-optional="project.contactUrl" hidden><a data-href="project.contactUrl" href="#">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="copyright">
+        © <span data-current-year>2026</span> <span data-config="project.author" data-fallback="まねまね(MoneyManage)">まねまね(MoneyManage)</span>
+        <span data-optional="project.license" hidden> ・ <span data-config="project.license"></span></span>
+      </p>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="画像の拡大表示">
+    <div class="lightbox-bar">
+      <p data-lightbox-caption></p>
+      <button class="btn btn-secondary btn-small" type="button" data-lightbox-close>閉じる</button>
+    </div>
+    <img src="" alt="">
+  </dialog>
+
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
