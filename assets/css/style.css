@@ -180,6 +180,7 @@ p {
 .site-nav a {
   display: block;
   padding: 8px 12px;
+  white-space: nowrap;
   color: var(--text);
   text-decoration: none;
   font-size: 0.9375rem;
@@ -1071,4 +1072,36 @@ p {
 /* ヘッダーのダウンロードボタンで移動したときにフォーカスを受ける節（枠線は出さない） */
 .section[tabindex="-1"]:focus {
   outline: none;
+}
+
+/* 見出しを1行で表示する。スマートフォン幅では「、」の後でだけ折り返し、後半が1行に収まる文字サイズにする */
+@media (max-width: 760px) {
+  .section-head h2.one-line {
+    font-size: min(var(--fs-h2), calc((100vw - 2 * var(--gutter)) / 16.5));
+  }
+}
+
+@media (min-width: 761px) {
+  .section-head:has(.one-line) {
+    max-width: none;
+  }
+
+  .one-line {
+    white-space: nowrap;
+  }
+}
+
+/* タブレット幅ではヘッダーの横幅が足りないため、ロゴ横の英字名を省く */
+@media (min-width: 761px) and (max-width: 960px) {
+  .brand-sub {
+    display: none;
+  }
+
+  .header-cta {
+    white-space: nowrap;
+  }
+}
+
+.one-line .nowrap {
+  white-space: nowrap;
 }

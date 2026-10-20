@@ -13,10 +13,9 @@ window.SITE_CONFIG = {
     tagline: "給料日から次の給料日まで。お金の流れを、ひと目で。",
     // 動作確認済みの環境（実際に確認したものだけを書く）
     testedOn: "Windows 11 Home（64bit）",
-    // 必要な環境（同梱の Java 実行環境で動くため Java は不要）
+    // 必要な環境
     requirements: [
       "Windows（64bit）",
-      "Java のインストールは不要（アプリに同梱）",
       "ディスクの空き容量 約 200MB（展開後）"
     ]
   },
