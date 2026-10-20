@@ -1067,3 +1067,8 @@ p {
     display: none;
   }
 }
+
+/* ヘッダーのダウンロードボタンで移動したときにフォーカスを受ける節（枠線は出さない） */
+.section[tabindex="-1"]:focus {
+  outline: none;
+}
