@@ -976,12 +976,25 @@ p {
     --gutter: 18px;
   }
 
-  .nav-toggle {
-    display: inline-flex;
+  .header-inner {
+    gap: 10px;
   }
 
+  /* スマートフォンでもダウンロードボタンを表示する（メニューボタンの左隣） */
   .header-cta {
-    display: none;
+    order: 1;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .brand {
+    white-space: nowrap;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    order: 2;
+    margin-left: 0;
   }
 
   .site-nav {
@@ -1045,5 +1058,12 @@ p {
   *::before,
   *::after {
     transition: none !important;
+  }
+}
+
+@media (max-width: 440px) {
+  /* 狭い画面ではロゴ横の英字名を省き、ダウンロードボタンの場所を確保する */
+  .brand-sub {
+    display: none;
   }
 }
