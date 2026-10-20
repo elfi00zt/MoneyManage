@@ -53,6 +53,12 @@
       el.hidden = value == null || value === "";
     });
 
+    // data-missing="project.contactUrl" … 値が「ない」ときだけ表示する（「準備中」の表示用）
+    document.querySelectorAll("[data-missing]").forEach(function (el) {
+      var value = valueOf(el.getAttribute("data-missing"));
+      el.hidden = !(value == null || value === "");
+    });
+
     document.querySelectorAll("[data-href]").forEach(function (el) {
       var value = valueOf(el.getAttribute("data-href"));
       if (value) el.setAttribute("href", value);

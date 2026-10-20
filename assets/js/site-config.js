@@ -27,22 +27,20 @@ window.SITE_CONFIG = {
     fileName: "Manemane-0.1.0-windows.zip",        // 確定（配布する ZIP の名前）
     fileSizeBytes: 93963626,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
     sha256: "3a9b03c07dacbce3ed6920dcce1831fdbc7c2b02dcf9fced8e0aaf25c899b29b", // 同上
-    releaseDate: null,                             // 未確定（GitHub Releases で公開した日、例: "2026-11-01"）
-    // 未確定: 一般公開する GitHub Releases の ZIP の URL
-    // 例: "https://github.com/<ユーザー名>/<リポジトリ名>/releases/download/v0.1.0/Manemane-0.1.0-windows.zip"
-    // null の間は、ダウンロードボタンが「公開準備中」になります
-    downloadUrl: null,
-    // 未確定: すべてのリリースの一覧ページ（例: "https://github.com/<ユーザー名>/<リポジトリ名>/releases"）
-    releasesPageUrl: null
+    releaseDate: "2026-10-21",                     // GitHub Releases で公開した日
+    // 一般公開している GitHub Releases の ZIP の URL（null にするとボタンが「公開準備中」になる）
+    downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.1.0/Manemane-0.1.0-windows.zip",
+    // すべてのリリースの一覧ページ
+    releasesPageUrl: "https://github.com/elfi00zt/MoneyManage/releases"
   },
 
   // ---- 公開先・連絡先（未確定） ----
   project: {
-    // 未確定: 公開用 GitHub リポジトリの URL（null の間はフッターに表示しない）
-    repositoryUrl: null,
-    // 未確定: 作者名（表示名）。null の間は表示しない
+    // 公開用 GitHub リポジトリの URL
+    repositoryUrl: "https://github.com/elfi00zt/MoneyManage",
+    // 準備中: 作者名（表示名）。null の間は「準備中」と表示する
     author: null,
-    // 未確定: お問い合わせ先（URL または mailto:）。null の間は表示しない
+    // 準備中: お問い合わせ先（URL または mailto:）。null の間は「お問い合わせ（準備中）」と表示する
     contactUrl: null,
     // 未確定: ライセンス名（例: "MIT License"）。null の間は表示しない
     license: null
@@ -53,7 +51,7 @@ window.SITE_CONFIG = {
   changelog: [
     {
       version: "0.1.0",
-      date: null,
+      date: "2026-10-21",
       items: [
         "給料日から次の給料日の前日までを1つの期間として管理",
         "収入・支出の登録・編集・削除・複製、項目名の入力補完",

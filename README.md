@@ -1,5 +1,7 @@
 # まねまね(MoneyManage) 公式サイト
 
+公開中: https://elfi00zt.github.io/MoneyManage/
+
 Windows 用家計簿アプリ「まねまね(MoneyManage)」の紹介・ダウンロード用の静的サイトです。
 GitHub Pages でそのまま公開できます（ビルド不要・フレームワークなし）。
 
@@ -31,10 +33,11 @@ python -m http.server 8000
 
 | 項目 | 状態 | 説明 |
 |---|---|---|
-| `release.downloadUrl` | 未確定 | 一般公開する ZIP の URL。設定するとダウンロードボタンが有効になります |
-| `release.releaseDate` | 未確定 | 公開日（例: `"2026-11-01"`） |
-| `release.releasesPageUrl` | 未確定 | リリース一覧ページの URL |
-| `project.repositoryUrl` / `author` / `contactUrl` / `license` | 未確定 | フッターに表示する情報 |
+| `release.downloadUrl` | 設定済み | 一般公開する ZIP の URL（`null` にするとボタンが「公開準備中」になります） |
+| `release.releaseDate` | 設定済み | 公開日 |
+| `release.releasesPageUrl` / `project.repositoryUrl` | 設定済み | リリース一覧・リポジトリの URL |
+| `project.author` / `contactUrl` | 準備中 | `null` の間は「準備中」と表示します |
+| `project.license` | 未確定 | `null` の間は表示しません |
 | `release.version` / `fileName` / `fileSizeBytes` / `sha256` | 確定 | ZIP を作り直したら更新します |
 | `changelog` | 確定 | 更新履歴（新しい順） |
 
