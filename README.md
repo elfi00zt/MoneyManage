@@ -35,7 +35,6 @@ python -m http.server 8000
 |---|---|---|
 | `release.downloadUrl` | 設定済み | 一般公開する ZIP の URL（`null` にするとボタンが「公開準備中」になります） |
 | `release.releaseDate` | 設定済み | 公開日 |
-| `release.releasesPageUrl` / `project.repositoryUrl` | 設定済み | リリース一覧・リポジトリの URL |
 | `project.author` / `contactUrl` | 準備中 | `null` の間は「準備中」と表示します |
 | `project.license` | 未確定 | `null` の間は表示しません |
 | `release.version` / `fileName` / `fileSizeBytes` / `sha256` | 確定 | ZIP を作り直したら更新します |
@@ -70,3 +69,7 @@ Get-FileHash .\Manemane-0.1.0-windows.zip -Algorithm SHA256
 2. リポジトリの Settings → Pages で「Deploy from a branch」、ブランチ `main`、フォルダ `/ (root)` を選ぶ
 
 無料プランでは、GitHub Pages を公開できるのは公開（public）リポジトリだけです。
+
+## CSS・JavaScript を変更したとき
+
+ブラウザが古いファイルを使い続けないように、`index.html`・`guide.html`・`404.html` の読み込み部分の `?v=…`（例: `style.css?v=20261021b`）を新しい値に変えてください。

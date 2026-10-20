@@ -1082,7 +1082,7 @@ p {
 }
 
 @media (min-width: 761px) {
-  .section-head:has(.one-line) {
+  .section-head-wide {
     max-width: none;
   }
 

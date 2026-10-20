@@ -29,14 +29,10 @@ window.SITE_CONFIG = {
     releaseDate: "2026-10-21",                     // GitHub Releases で公開した日
     // 一般公開している GitHub Releases の ZIP の URL（null にするとボタンが「公開準備中」になる）
     downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.1.0/Manemane-0.1.0-windows.zip",
-    // すべてのリリースの一覧ページ
-    releasesPageUrl: "https://github.com/elfi00zt/MoneyManage/releases"
   },
 
   // ---- 公開先・連絡先（未確定） ----
   project: {
-    // 公開用 GitHub リポジトリの URL
-    repositoryUrl: "https://github.com/elfi00zt/MoneyManage",
     // 準備中: 作者名（表示名）。null の間は「準備中」と表示する
     author: null,
     // 準備中: お問い合わせ先（URL または mailto:）。null の間は「お問い合わせ（準備中）」と表示する
