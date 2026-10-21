@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261021b">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261022a">
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -104,7 +104,7 @@
               </tbody>
             </table>
           </div>
-          <p>最初の期間の「前期繰越」は 0 円で始まります。これまでの家計簿から引き継ぐ金額がある場合は、メイン画面の「前期繰越」カードの「編集」で入力してください（不足している場合はマイナス）。</p>
+          <p>最初の期間の「前月繰越」は 0 円で始まります。これまでの家計簿から引き継ぐ金額がある場合は、メイン画面の「前月繰越」カードの「編集」で入力してください（不足している場合はマイナス）。</p>
         </section>
 
         <section id="screen" aria-labelledby="h-screen">
@@ -119,14 +119,14 @@
               <tbody>
                 <tr><td>期間</td><td>給料日から次の給料日の前日まで。最新の期間の終了日は「次の給料日（予定）の前日」で、（予定）と表示されます。</td></tr>
                 <tr><td>収入</td><td>期間内の収入の合計</td></tr>
-                <tr><td>前期繰越</td><td>前の期間の残額（不足ならマイナス）</td></tr>
-                <tr><td>利用可能金額</td><td>収入 ＋ 前期繰越</td></tr>
+                <tr><td>前月繰越</td><td>前の期間の残額（不足ならマイナス）</td></tr>
+                <tr><td>利用可能金額</td><td>収入 ＋ 前月繰越</td></tr>
                 <tr><td>固定費・変動費・投資・積立</td><td>期間内のそれぞれの合計</td></tr>
                 <tr><td>残額</td><td>利用可能金額 − 固定費 − 変動費 − 投資・積立。マイナスのときは赤く表示されます。</td></tr>
               </tbody>
             </table>
           </div>
-          <p>右側には、今期と前期の支出、カテゴリ別の支出のグラフが表示されます。明細の一覧は「全て／収入／固定費／変動費／投資・積立」で絞り込めます。</p>
+          <p>右側には、今月と前月の支出、カテゴリ別の支出のグラフが表示されます。明細の一覧は「全て／収入／固定費／変動費／投資・積立」で絞り込めます。</p>
         </section>
 
         <section id="entries" aria-labelledby="h-entries">
@@ -155,7 +155,7 @@
           <p>「新しい期間を開始」を押します。給料日には次の給料日の予定日が入っています（実際の給料日と違えば変更します）。確定する期間と繰り越す金額を確認して「開始」を押してください。</p>
           <p>「有効な固定費を新しい期間に反映する」にチェックがあると、登録済みの固定費が新しい期間に自動で登録されます。</p>
           <h3>繰越</h3>
-          <p>期間の残額は、プラスもマイナスも次の期間の「前期繰越」へ自動で引き継がれます。「前期繰越」カードの「編集」から手入力で上書きでき、「自動計算」に戻すこともできます。</p>
+          <p>期間の残額は、プラスもマイナスも次の期間の「前月繰越」へ自動で引き継がれます。「前月繰越」カードの「編集」から手入力で上書きでき、「自動計算」に戻すこともできます。</p>
         </section>
 
         <section id="fixed" aria-labelledby="h-fixed">
@@ -166,7 +166,7 @@
 
         <section id="reports" aria-labelledby="h-reports">
           <h2 id="h-reports">集計（グラフ・年間）</h2>
-          <p>メイン画面の右側で、今期・前期の支出と前期との差、カテゴリ別の支出（金額と割合）を確認できます。</p>
+          <p>メイン画面の右側で、今月・前月の支出と前月との差、カテゴリ別の支出（金額と割合）を確認できます。</p>
           <h3>年間の収支</h3>
           <p>メニュー「集計」→「年間の収支…」で、1月1日〜12月31日の収入合計・支出合計・収支と、月別の表を確認できます。給料日の期間ではなく、明細の日付で集計します（繰越は含みません）。</p>
           <figure>
@@ -289,7 +289,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/site-config.js?v=20261021b"></script>
-  <script src="assets/js/main.js?v=20261021b"></script>
+  <script src="assets/js/site-config.js?v=20261022a"></script>
+  <script src="assets/js/main.js?v=20261022a"></script>
 </body>
 </html>

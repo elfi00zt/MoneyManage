@@ -24,8 +24,8 @@ window.SITE_CONFIG = {
   release: {
     version: "0.1.0",                              // 確定（アプリ内のバージョン）
     fileName: "Manemane-0.1.0-windows.zip",        // 確定（配布する ZIP の名前）
-    fileSizeBytes: 93963626,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
-    sha256: "3a9b03c07dacbce3ed6920dcce1831fdbc7c2b02dcf9fced8e0aaf25c899b29b", // 同上
+    fileSizeBytes: 94004352,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
+    sha256: "9942ebbcc81a5978ceb1f8521e2e069269c9d2612beb61d1a309341a5e98ce9d", // 同上
     releaseDate: "2026-10-21",                     // GitHub Releases で公開した日
     // 一般公開している GitHub Releases の ZIP の URL（null にするとボタンが「公開準備中」になる）
     downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.1.0/Manemane-0.1.0-windows.zip",
@@ -50,12 +50,14 @@ window.SITE_CONFIG = {
       items: [
         "給料日から次の給料日の前日までを1つの期間として管理",
         "収入・支出の登録・編集・削除・複製、項目名の入力補完",
+        "明細一覧の列ごとの並べ替え・絞り込み（Excel のフィルターのような操作）",
         "前の期間の残額を自動で繰り越し（手入力での上書きも可能）",
         "固定費（サブスク・家賃など）を登録して期間にまとめて反映",
-        "カテゴリ別の支出グラフ、前期との比較",
+        "カテゴリ別の支出グラフ、前月との比較",
         "年間の収支（1月〜12月の月別・年間合計）",
         "Excel への書き出し・取り込み",
         "バックアップと復元",
+        "起動時のパスワード（設定でオン／オフ）",
         "アプリ内の使い方（ヘルプ）"
       ]
     }
