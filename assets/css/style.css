@@ -435,6 +435,19 @@ p {
   grid-column: 1 / -1;
 }
 
+/* 横長の画面（2列分の幅で、縦横比はそのまま） */
+.screen-span2 {
+  grid-column: span 2;
+}
+
+.screens .screen.screen-span2 button {
+  aspect-ratio: auto;
+}
+
+.screens .screen.screen-span2 img {
+  height: auto;
+}
+
 .screen button {
   display: block;
   width: 100%;
@@ -1029,6 +1042,10 @@ p {
   .steps,
   .screens {
     grid-template-columns: 1fr;
+  }
+
+  .screen-span2 {
+    grid-column: auto;
   }
 
   .release {

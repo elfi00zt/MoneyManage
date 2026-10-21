@@ -1,5 +1,5 @@
 ﻿# Copies captured screenshots into assets/img/screens and builds the OGP image.
-# Usage: powershell -ExecutionPolicy Bypass -File tools\process_screens.ps1 -In <folder with main/entry/year/help.png>
+# Usage: powershell -ExecutionPolicy Bypass -File tools\process_screens.ps1 -In <folder with main.png and any of entry/year/help/filter/settings/login.png>
 param([string]$In, [string]$Root = (Resolve-Path "$PSScriptRoot\..").Path)
 Add-Type -AssemblyName System.Drawing
 $out = Join-Path $Root 'assets\img\screens'
@@ -18,7 +18,10 @@ function Save-Cropped([string]$name, [int]$bottom) {
 
 # メイン画面はステータスバー（DB の保存場所の表示）を切り取る
 $main = Save-Cropped 'main' 36
-foreach ($n in 'entry', 'year', 'help') { (Save-Cropped $n 0).Dispose() }
+# そのほかの画面は、撮り直したものだけをそのまま差し替える
+foreach ($n in 'entry', 'year', 'help', 'filter', 'settings', 'login') {
+  if (Test-Path (Join-Path $In "$n.png")) { (Save-Cropped $n 0).Dispose() }
+}
 
 # OGP 画像（1200x630）: ネイビーの背景にアイコン・アプリ名・メイン画面
 $W = 1200; $H = 630

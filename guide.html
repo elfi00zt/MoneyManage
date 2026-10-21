@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261022a">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261022b">
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -58,11 +58,13 @@
           <li><a href="#install">ダウンロードと起動</a></li>
           <li><a href="#setup">初回セットアップ</a></li>
           <li><a href="#screen">メイン画面の見方</a></li>
+          <li><a href="#filter">並べ替え・絞り込み</a></li>
           <li><a href="#entries">明細の登録・編集</a></li>
           <li><a href="#period">新しい期間と繰越</a></li>
           <li><a href="#fixed">固定費</a></li>
           <li><a href="#reports">集計（グラフ・年間）</a></li>
           <li><a href="#masters">カテゴリ・支払方法</a></li>
+          <li><a href="#password">起動時のパスワード</a></li>
           <li><a href="#backup">バックアップと PC の移行</a></li>
           <li><a href="#excel">Excel の書き出し・取り込み</a></li>
           <li><a href="#keys">キーボードの操作</a></li>
@@ -110,7 +112,7 @@
         <section id="screen" aria-labelledby="h-screen">
           <h2 id="h-screen">メイン画面の見方</h2>
           <figure>
-            <img src="assets/img/screens/main.png" width="1398" height="817" loading="lazy" alt="メイン画面">
+            <img src="assets/img/screens/main.png" width="1424" height="818" loading="lazy" alt="メイン画面">
             <figcaption>メイン画面（金額は説明用の架空のデータです）</figcaption>
           </figure>
           <div class="table-wrap">
@@ -126,7 +128,25 @@
               </tbody>
             </table>
           </div>
-          <p>右側には、今月と前月の支出、カテゴリ別の支出のグラフが表示されます。明細の一覧は「全て／収入／固定費／変動費／投資・積立」で絞り込めます。</p>
+          <p>右側には、今月と前月の支出、カテゴリ別の支出のグラフが表示されます。明細の一覧は「全て／収入／固定費／変動費／投資・積立」で絞り込めます。列の見出しからは、並べ替えや値ごとの絞り込みもできます（次の項目）。</p>
+        </section>
+
+        <section id="filter" aria-labelledby="h-filter">
+          <h2 id="h-filter">並べ替え・絞り込み</h2>
+          <p>明細の一覧の列の見出し（区分・日付・項目・カテゴリ・支払方法・金額・メモ）をクリックすると、Excel のフィルターのようなメニューが開きます。</p>
+          <figure>
+            <img src="assets/img/screens/filter.png" width="880" height="499" loading="lazy" alt="支払方法の見出しから開いたメニュー。並べ替えのボタンと、値ごとのチェック（クレジットカードだけにチェック）があり、一覧はクレジットカードの明細だけになっている">
+            <figcaption>「支払方法」をクレジットカードだけに絞り込んだところ</figcaption>
+          </figure>
+          <ul>
+            <li><strong>並べ替え</strong> … 日付は「古い順／新しい順」、金額は「小さい順／大きい順」、文字は五十音順。「並べ替えを解除」で元の順（日付順）に戻ります。</li>
+            <li><strong>絞り込み</strong> … 表示したい値にチェックを入れて「OK」。検索欄に入力すると、値の一覧を絞り込めます。空欄の値は「（空白）」と表示されます。</li>
+            <li>複数の列で同時に絞り込めます。上の「全て／収入／固定費…」のボタンとも組み合わせられ、期間を切り替えても絞り込みは残ります。</li>
+            <li>絞り込み中の列は見出しが青くなり、漏斗の印が付きます。並べ替え中の列には ↑ ↓ が付きます。下の欄には「（絞り込み中: ◯件中）」と表示されます。</li>
+            <li>「並べ替え・絞り込みを全解除」で、元の表示に戻ります。</li>
+          </ul>
+          <p>キーボードでは、一覧で <kbd>Alt</kbd> + <kbd>↓</kbd> を押すとメニューが開きます。メニューの中では <kbd>←</kbd> <kbd>→</kbd> で隣の列に移り、<kbd>Space</kbd> でチェックの切り替え、<kbd>Enter</kbd> で決定、<kbd>Esc</kbd> で閉じます。</p>
+          <p class="callout">並べ替え・絞り込みは表示だけの変更です。登録されている明細や集計の金額は変わりません。</p>
         </section>
 
         <section id="entries" aria-labelledby="h-entries">
@@ -179,6 +199,24 @@
           <p>メニュー「管理」→「カテゴリ・支払方法…」で、追加・名前の変更・並べ替え・削除ができます。明細や固定費で使われているものは、削除の代わりに「無効」になります（過去の明細には残り、新しい入力の選択肢から消えます）。「無効も表示」にチェックすると、有効に戻せます。</p>
         </section>
 
+        <section id="password" aria-labelledby="h-password">
+          <h2 id="h-password">起動時のパスワード</h2>
+          <p>メニュー「設定」→「設定…」の「起動時のパスワード」で、アプリを開くときにパスワードの入力を求めるようにできます。</p>
+          <figure>
+            <img src="assets/img/screens/settings.png" width="522" height="361" loading="lazy" alt="設定の画面。起動時のパスワードがオンで、「無効にする」「パスワードを変更」のボタンがある">
+          </figure>
+          <ul>
+            <li><strong>オンにする</strong> … 「パスワードを設定して有効にする」を押し、パスワード（4〜64文字）を確認用と合わせて2回入力します。</li>
+            <li><strong>オフにする・もう一度オンにする・変更する</strong> … どれも現在のパスワードの入力が必要です。</li>
+            <li>オフにしても、設定したパスワードは残ります（もう一度オンにするときに使います）。</li>
+          </ul>
+          <p>オンのときは、起動するとパスワードの入力画面だけが表示されます。正しいパスワードを入力するまで、明細や集計は表示されません。</p>
+          <figure>
+            <img src="assets/img/screens/login.png" width="402" height="183" loading="lazy" alt="起動時のパスワード入力画面">
+          </figure>
+          <p class="callout"><strong>パスワードを忘れると、アプリを開けなくなります</strong>（再設定の方法はありません）。また、これはアプリを開くときの確認で、データのファイル自体は暗号化されません。バックアップから復元すると、パスワードの設定もバックアップした時点のものに戻ります。</p>
+        </section>
+
         <section id="backup" aria-labelledby="h-backup">
           <h2 id="h-backup">バックアップと PC の移行</h2>
           <ul>
@@ -229,6 +267,7 @@
                 <tr><td><kbd>Alt</kbd> + <kbd>←</kbd> / <kbd>→</kbd></td><td>前の期間／次の期間</td></tr>
                 <tr><td><kbd>Enter</kbd>（一覧で）</td><td>選んだ明細を編集</td></tr>
                 <tr><td><kbd>Delete</kbd>（一覧で）</td><td>選んだ明細を削除</td></tr>
+                <tr><td><kbd>Alt</kbd> + <kbd>↓</kbd>（一覧で）</td><td>選んだ列の並べ替え・絞り込みのメニューを開く</td></tr>
                 <tr><td><kbd>Esc</kbd></td><td>入力画面を閉じる</td></tr>
               </tbody>
             </table>
@@ -289,7 +328,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/site-config.js?v=20261022a"></script>
-  <script src="assets/js/main.js?v=20261022a"></script>
+  <script src="assets/js/site-config.js?v=20261022b"></script>
+  <script src="assets/js/main.js?v=20261022b"></script>
 </body>
 </html>

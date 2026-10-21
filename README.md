@@ -59,9 +59,12 @@ Get-FileHash .\Manemane-0.1.0-windows.zip -Algorithm SHA256
 画面の金額は説明用の架空のデータです（実際の家計のデータは使いません）。
 
 1. `python tools/make_demo_db.py <アプリの V1__init.sql> <出力先>/demo.db` でデモデータを作る
-2. アプリを `gradlew.bat :desktop:run -PkakeiboDb=<出力先>\demo.db` で起動し、各画面を `main.png` / `entry.png` / `year.png` / `help.png` として撮影する
+2. アプリを `gradlew.bat :desktop:run -PkakeiboDb=<出力先>\demo.db` で起動し、各画面を撮影する
+   - `main.png` / `entry.png` / `year.png` / `help.png`
+   - `filter.png`（列見出しの絞り込みメニューを開いた一覧）、`settings.png`（設定画面）、`login.png`（起動時のパスワード入力）
+   - 出力先はユーザー名を含まない場所（例: `C:\Users\Public\Documents\...`）にする（設定画面にデータの保存場所が表示されるため）
 3. `powershell -ExecutionPolicy Bypass -File tools\process_screens.ps1 -In <撮影した画像のフォルダ>` で `assets/img/screens` と OGP 画像を更新する
-   （メイン画面はステータスバーのデータの保存場所の表示を切り取ります）
+   （`main.png` は必須。ほかは撮り直したものだけ差し替えます。メイン画面はステータスバーのデータの保存場所の表示を切り取ります）
 
 ## GitHub Pages で公開する
 
