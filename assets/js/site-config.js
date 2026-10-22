@@ -24,8 +24,8 @@ window.SITE_CONFIG = {
   release: {
     version: "0.1.0",                              // 確定（アプリ内のバージョン）
     fileName: "Manemane-0.1.0-windows.zip",        // 確定（配布する ZIP の名前）
-    fileSizeBytes: 94004352,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
-    sha256: "9942ebbcc81a5978ceb1f8521e2e069269c9d2612beb61d1a309341a5e98ce9d", // 同上
+    fileSizeBytes: 94006316,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
+    sha256: "d325d03b920725279284e56e4a6ed99ff8fdf6fd15336d8560f6b075aecdc1ac", // 同上
     releaseDate: "2026-10-21",                     // GitHub Releases で公開した日
     // 一般公開している GitHub Releases の ZIP の URL（null にするとボタンが「公開準備中」になる）
     downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.1.0/Manemane-0.1.0-windows.zip",
@@ -58,7 +58,8 @@ window.SITE_CONFIG = {
         "Excel への書き出し・取り込み",
         "バックアップと復元",
         "起動時のパスワード（設定でオン／オフ）",
-        "アプリ内の使い方（ヘルプ）"
+        "アプリ内の使い方（ヘルプ）",
+        "ノートパソコンなど小さい画面でも収まる表示"
       ]
     }
   ]
