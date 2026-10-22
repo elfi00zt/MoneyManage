@@ -43,8 +43,8 @@ python -m http.server 8000
 SHA-256 とサイズは PowerShell で確認できます。
 
 ```
-Get-FileHash .\Manemane-0.1.0-windows.zip -Algorithm SHA256
-(Get-Item .\Manemane-0.1.0-windows.zip).Length
+Get-FileHash .\Manemane-0.2.0-windows.zip -Algorithm SHA256
+(Get-Item .\Manemane-0.2.0-windows.zip).Length
 ```
 
 ## 新しいバージョンを公開する手順

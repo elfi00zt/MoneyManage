@@ -22,13 +22,13 @@ window.SITE_CONFIG = {
 
   // ---- 最新リリース ----
   release: {
-    version: "0.1.0",                              // 確定（アプリ内のバージョン）
-    fileName: "Manemane-0.1.0-windows.zip",        // 確定（配布する ZIP の名前）
-    fileSizeBytes: 94100749,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
-    sha256: "05eb0897325f5d3d4576705154ebf8afd97bba1044fec111d425ae5af1b07d81", // 同上
-    releaseDate: "2026-10-21",                     // GitHub Releases で公開した日
+    version: "0.2.0",                              // 確定（アプリ内のバージョン）
+    fileName: "Manemane-0.2.0-windows.zip",        // 確定（配布する ZIP の名前）
+    fileSizeBytes: 94100753,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
+    sha256: "fa3b81b73773f0efebce3d262d57fdef3174f9a6dbe128b676c1bb750a3bddfa", // 同上
+    releaseDate: "2026-10-23",                     // GitHub Releases で公開した日
     // 一般公開している GitHub Releases の ZIP の URL（null にするとボタンが「公開準備中」になる）
-    downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.1.0/Manemane-0.1.0-windows.zip",
+    downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.2.0/Manemane-0.2.0-windows.zip",
   },
 
   // ---- 公開先・連絡先（未確定） ----
@@ -45,6 +45,19 @@ window.SITE_CONFIG = {
   // date は「公開した日」。未公開のものは null（表示は「未公開」）
   changelog: [
     {
+      version: "0.2.0",
+      date: "2026-10-23",
+      items: [
+        "貯金・積立を追加（口座ごとの残高、積立額の累計、貯金からの累計支出額）",
+        "積立の目的（旅行・生活防衛資金など）ごとの目標額と、今月の実績・達成率",
+        "支出の「支払元」に貯金口座を選べる（家計の残額は減らさず、口座の残高を減らす）",
+        "貯金・積立の画面（概要・履歴・推移とグラフ・積立の目的・口座）",
+        "メイン画面に「貯金残高」「貯金」のカードと「+ 貯金」ボタン",
+        "年間の収支・Excel の書き出し／取り込みに貯金の列を追加",
+        "データの形式を更新（0.2.0 で開いたデータは 0.1.0 では開けません。更新前にバックアップを取ってください）"
+      ]
+    },
+    {
       version: "0.1.0",
       date: "2026-10-21",
       items: [
@@ -56,7 +69,6 @@ window.SITE_CONFIG = {
         "カテゴリ別の支出グラフ、前月との比較",
         "年間の収支（1月〜12月の月別・年間合計）",
         "Excel への書き出し・取り込み",
-        "貯金・積立（口座ごとの残高、積立の目的と目標額・達成率、貯金からの支出、推移のグラフ）",
         "バックアップと復元",
         "起動時のパスワード（設定でオン／オフ）",
         "アプリ内の使い方（ヘルプ）",

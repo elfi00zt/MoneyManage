@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261023a">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261023b">
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -93,6 +93,9 @@
           </ol>
           <p class="callout"><code>Manemane</code> フォルダの中身は、まとめて置いたまま使ってください。<code>Manemane.exe</code> だけを別の場所に移すと起動しません。デスクトップから起動したい場合は、ショートカットを作成してください。</p>
           <p>初回起動時に「Windows によって PC が保護されました」と表示された場合は、「詳細情報」→「実行」を選んでください。署名のない個人開発のアプリのため表示されます。</p>
+          <h3>新しいバージョンにするとき</h3>
+          <p>新しい ZIP を別のフォルダに展開して <code>Manemane.exe</code> を起動してください。データ（<code>%APPDATA%\Manemane\kakeibo.db</code>）はそのまま引き継がれます。</p>
+          <p class="callout">0.2.0 で一度開くとデータの形式が新しくなり、0.1.0 では開けなくなります。更新する前に、0.1.0 の「ファイル」→「バックアップ…」でバックアップを取っておいてください（0.1.0 のバックアップは 0.2.0 で復元できます）。</p>
         </section>
 
         <section id="setup" aria-labelledby="h-setup">
@@ -377,7 +380,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/site-config.js?v=20261023a"></script>
-  <script src="assets/js/main.js?v=20261023a"></script>
+  <script src="assets/js/site-config.js?v=20261023b"></script>
+  <script src="assets/js/main.js?v=20261023b"></script>
 </body>
 </html>
