@@ -2,7 +2,8 @@
 スクリーンショット撮影用のデモデータ（架空）を作る。
 
 使い方:
-  python make_demo_db.py <アプリのソースの V1__init.sql> <出力する .db>
+  python make_demo_db.py <アプリのソースの V1__init.sql> <出力する .db> [<V2__savings.sql>]
+  V2 を指定すると、貯金・積立のデータ（口座・積立の目的・入金・貯金からの支出）も入れる。
 アプリは -PkakeiboDb=<出力した .db> を付けて起動する（本番のデータには触れない）。
 """
 import sqlite3
@@ -10,6 +11,7 @@ import sys
 from datetime import date, timedelta
 
 schema, out = sys.argv[1], sys.argv[2]
+savings_schema = sys.argv[3] if len(sys.argv) > 3 else None
 db = sqlite3.connect(out)
 db.executescript(open(schema, encoding="utf-8").read())
 now = "2026-10-20T10:00:00"
@@ -20,7 +22,11 @@ db.execute("INSERT INTO app_setting VALUES ('regular_payday', '25', ?)", (now,))
 paydays = ["2026-01-23", "2026-02-25", "2026-03-25", "2026-04-24", "2026-05-25", "2026-06-25",
            "2026-07-24", "2026-08-25", "2026-09-25"]
 # 画面上の期間は直近の2つだけにする（1〜7月の明細は「年間の収支」の画面にだけ表示される）
-for d, carry in [("2026-08-25", 32000), ("2026-09-25", None)]:
+periods = [("2026-08-25", 32000), ("2026-09-25", None)]
+if savings_schema:
+    # 撮影日（10/23）が新しい期間に入るため、10/23 からの期間も作る（画面は「前の期間」に戻して撮る）
+    periods.append(("2026-10-23", None))
+for d, carry in periods:
     db.execute("INSERT INTO budget_period(start_date, carry_over_override, created_at, updated_at) "
                "VALUES (?, ?, ?, ?)", (d, carry, now, now))
 
@@ -61,5 +67,39 @@ for i, d in enumerate(paydays):
 # 表示中の期間（9/25〜）の変動費を少し足す
 add("EXPENSE", 0, "2026-10-12", "書籍", 1760, "買い物", "クレジットカード")
 add("INCOME", 0, "2026-10-15", "副業", 15000, "副業")
+
+if savings_schema:
+    db.executescript(open(savings_schema, encoding="utf-8").read())
+    db.execute("INSERT INTO schema_version VALUES (2, '貯金・積立', ?)", (now,))
+    db.execute("INSERT INTO savings_account (name, sort_order, created_at, updated_at) VALUES ('ネット銀行', 20, ?, ?)",
+               (now, now))
+    for name, target, order in [("旅行", 20000, 10), ("生活防衛資金", 10000, 20)]:
+        gid = db.execute("INSERT INTO savings_goal (name, sort_order, created_at, updated_at) VALUES (?, ?, ?, ?)",
+                         (name, order, now, now)).lastrowid
+        db.execute("INSERT INTO savings_goal_target VALUES (?, '2026-08-25', ?, ?)", (gid, target, now))
+
+    def account(n):
+        return db.execute("SELECT id FROM savings_account WHERE name=?", (n,)).fetchone()[0]
+
+    def goal(n):
+        return None if n is None else db.execute("SELECT id FROM savings_goal WHERE name=?", (n,)).fetchone()[0]
+
+    def save(date_, amount, acc, goal_name=None):
+        db.execute("INSERT INTO entry(entry_type, is_fixed, entry_date, title, amount, category_id, savings_account_id,"
+                   " savings_goal_id, created_at, updated_at) VALUES ('SAVINGS', 0, ?, ?, ?, ?, ?, ?, ?, ?)",
+                   (date_, goal_name or "貯金", amount, cat("SAVINGS", "貯金"), account(acc), goal(goal_name), now, now))
+
+    save("2026-08-26", 20000, "貯金口座")
+    save("2026-08-27", 20000, "ネット銀行", "旅行")
+    save("2026-08-27", 10000, "貯金口座", "生活防衛資金")
+    save("2026-09-26", 20000, "ネット銀行", "旅行")
+    save("2026-09-26", 5000, "貯金口座", "生活防衛資金")
+    # 貯金から支払った支出（家計の残額は減らさず、貯金口座の残高が減る）
+    db.execute("INSERT INTO entry(entry_type, is_fixed, entry_date, title, amount, category_id, payment_method_id,"
+               " savings_account_id, created_at, updated_at) VALUES ('EXPENSE', 0, '2026-10-03', '電子レンジ', 12000, ?, ?,"
+               " ?, ?, ?)", (cat("EXPENSE", "買い物"), pm("銀行振込"), account("貯金口座"), now, now))
+    add("INCOME", 1, "2026-10-23", "給与", 250000, "給与")
+    save("2026-10-23", 20000, "ネット銀行", "旅行")
+    save("2026-10-23", 10000, "貯金口座", "生活防衛資金")
 db.commit()
 print("entries:", db.execute("SELECT COUNT(*) FROM entry").fetchone()[0])

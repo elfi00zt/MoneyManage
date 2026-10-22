@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261022c">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261023a">
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -63,6 +63,7 @@
           <li><a href="#period">新しい期間と繰越</a></li>
           <li><a href="#fixed">固定費</a></li>
           <li><a href="#reports">集計（グラフ・年間）</a></li>
+          <li><a href="#savings">貯金・積立</a></li>
           <li><a href="#masters">カテゴリ・支払方法</a></li>
           <li><a href="#password">起動時のパスワード</a></li>
           <li><a href="#backup">バックアップと PC の移行</a></li>
@@ -112,7 +113,7 @@
         <section id="screen" aria-labelledby="h-screen">
           <h2 id="h-screen">メイン画面の見方</h2>
           <figure>
-            <img src="assets/img/screens/main.png" width="1424" height="818" loading="lazy" alt="メイン画面">
+            <img src="assets/img/screens/main.png" width="1424" height="838" loading="lazy" alt="メイン画面">
             <figcaption>メイン画面（金額は説明用の架空のデータです）</figcaption>
           </figure>
           <div class="table-wrap">
@@ -124,11 +125,13 @@
                 <tr><td>前月繰越</td><td>前の期間の残額（不足ならマイナス）</td></tr>
                 <tr><td>利用可能金額</td><td>収入 ＋ 前月繰越</td></tr>
                 <tr><td>固定費・変動費・投資・積立</td><td>期間内のそれぞれの合計</td></tr>
-                <tr><td>残額</td><td>利用可能金額 − 固定費 − 変動費 − 投資・積立。マイナスのときは赤く表示されます。</td></tr>
+                <tr><td>貯金残高</td><td>全部の貯金口座の今の残高（「詳細」で貯金・積立の画面を開きます）</td></tr>
+                <tr><td>貯金</td><td>期間内に家計から貯金口座へ移した額（積立を含む）</td></tr>
+                <tr><td>残額</td><td>利用可能金額 − 固定費 − 変動費 − 投資・積立 − 貯金。マイナスのときは赤く表示されます。貯金から支払った支出は差し引きません。</td></tr>
               </tbody>
             </table>
           </div>
-          <p>右側には、今月と前月の支出、カテゴリ別の支出のグラフが表示されます。明細の一覧は「全て／収入／固定費／変動費／投資・積立」で絞り込めます。列の見出しからは、並べ替えや値ごとの絞り込みもできます（次の項目）。</p>
+          <p>右側には、今月と前月の支出、カテゴリ別の支出のグラフが表示されます。明細の一覧は「全て／収入／固定費／変動費／投資・積立／貯金」で絞り込めます。列の見出しからは、並べ替えや値ごとの絞り込みもできます（次の項目）。</p>
         </section>
 
         <section id="filter" aria-labelledby="h-filter">
@@ -153,11 +156,12 @@
           <h2 id="h-entries">明細の登録・編集</h2>
           <p>「+ 支出」または「+ 収入」を押して入力し、「保存」を押します。</p>
           <figure>
-            <img src="assets/img/screens/entry.png" width="460" height="422" loading="lazy" alt="支出を追加する画面">
+            <img src="assets/img/screens/entry.png" width="462" height="463" loading="lazy" alt="支出を追加する画面">
           </figure>
           <ul>
             <li><strong>区分</strong> … 支出は「固定費／変動費／投資・積立」、収入は「固定／変動」。</li>
             <li><strong>項目</strong> … 入力すると過去の項目名が候補に出ます。候補を選ぶと、前回のカテゴリと支払方法が入ります。</li>
+            <li><strong>支払元</strong> … 支出のとき、家計から払ったか貯金口座から払ったかを選びます（<a href="#savings">貯金・積立</a>）。</li>
             <li><strong>保存して続けて入力</strong> … 日付と区分を残したまま、次の明細を入力できます。</li>
           </ul>
           <h3>編集・削除・複製</h3>
@@ -188,15 +192,58 @@
           <h2 id="h-reports">集計（グラフ・年間）</h2>
           <p>メイン画面の右側で、今月・前月の支出と前月との差、カテゴリ別の支出（金額と割合）を確認できます。</p>
           <h3>年間の収支</h3>
-          <p>メニュー「集計」→「年間の収支…」で、1月1日〜12月31日の収入合計・支出合計・収支と、月別の表を確認できます。給料日の期間ではなく、明細の日付で集計します（繰越は含みません）。</p>
+          <p>メニュー「集計」→「年間の収支…」で、1月1日〜12月31日の収入合計・支出合計・収支と、月別の表を確認できます。給料日の期間ではなく、明細の日付で集計します（繰越は含みません）。支出合計には貯金への入金を含みます。「貯金から支出」は家計の収支に含めない参考の列です。</p>
           <figure>
-            <img src="assets/img/screens/year.png" width="880" height="851" loading="lazy" alt="年間の収支の画面">
+            <img src="assets/img/screens/year.png" width="1062" height="852" loading="lazy" alt="年間の収支の画面">
           </figure>
+        </section>
+
+        <section id="savings" aria-labelledby="h-savings">
+          <h2 id="h-savings">貯金・積立</h2>
+          <p>給料から貯金に回したお金を「貯金」として記録し、口座ごとの残高・積立の目標と実績・貯金から使ったお金を管理できます。メニュー「集計」→「貯金・積立…」（またはメイン画面の「貯金残高」の「詳細」）で開きます。</p>
+          <figure>
+            <img src="assets/img/screens/savings.png" width="1042" height="772" loading="lazy" alt="貯金・積立の画面（概要）。貯金残高・積立額の累計・貯金からの累計支出額・今月の貯金額・積立額・目標と達成率、口座ごとの残高、目的ごとの進み具合">
+            <figcaption>貯金・積立の画面（概要）</figcaption>
+          </figure>
+          <h3>貯金する</h3>
+          <p>メイン画面の「+ 貯金」で、日付・貯金額・貯金口座・積立の目的・貯金の種類・メモを入力します。貯金した額は、その期間の残額から差し引かれます（家計から出ていくお金のため）。</p>
+          <figure>
+            <img src="assets/img/screens/savings-entry.png" width="462" height="475" loading="lazy" alt="貯金の入力画面。日付・貯金額・貯金口座・積立の目的・貯金の種類・項目・メモ">
+          </figure>
+          <ul>
+            <li><strong>積立</strong> … 「積立の目的」（旅行・生活防衛資金など）を選んだ貯金です。目的ごとに1期間あたりの目標額を設定でき、今月の目標と実績・達成率を確認できます。目標額を設定しただけでは貯金残高は増えません。</li>
+            <li><strong>貯金から支出</strong> … 支出の入力で「支払元」に貯金口座を選びます。その口座の残高が減り、家計の残額は減りません。口座の残高を超える金額は登録できません。明細一覧では区分が「貯金から支出」になります。</li>
+          </ul>
+          <h3>集計のきまり</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">表示</th><th scope="col">計算</th></tr></thead>
+              <tbody>
+                <tr><td>貯金残高</td><td>入金の累計 − 貯金からの支出の累計（口座ごと・全口座）</td></tr>
+                <tr><td>積立額の累計</td><td>積立の目的を選んで入金した額の累計（貯金から使っても減りません）</td></tr>
+                <tr><td>貯金からの累計支出額</td><td>貯金口座から支払った支出の累計</td></tr>
+                <tr><td>達成率</td><td>今月の積立額 ÷ 今月の積立目標</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>「今月」「月別」は給料日の期間です。年別は期間の開始日の年でまとめます。「投資・積立」（NISA など）は貯金残高に含めません。</p>
+          <h3>画面のタブ</h3>
+          <ul>
+            <li><strong>概要</strong> … 残高・累計・今月の貯金額・積立額・目標と達成率、口座ごとの残高、目的ごとの進み具合</li>
+            <li><strong>履歴</strong> … 入金と貯金からの支出の一覧（種別・年・口座で絞り込み、見出しで並べ替え）。登録後の残高も表示し、ダブルクリック・<kbd>Enter</kbd> で編集、<kbd>Delete</kbd> で削除できます。</li>
+            <li><strong>推移・グラフ</strong> … 月別／年別の表と、貯金額・積立額・積立目標・貯金からの支出の棒グラフ、貯金残高の折れ線グラフ</li>
+            <li><strong>積立の目的</strong>・<strong>口座</strong> … 追加・名前（と目標額）の変更・並べ替え・削除</li>
+          </ul>
+          <figure>
+            <img src="assets/img/screens/savings-chart.png" width="1042" height="950" loading="lazy" alt="推移・グラフのタブ。期間ごとの表と、貯金額・積立額・積立目標・貯金からの支出の棒グラフ、貯金残高の折れ線グラフ">
+            <figcaption>推移・グラフ（月別）</figcaption>
+          </figure>
+          <p class="callout">残高は記録から毎回計算し直すため、過去の記録を変更・削除しても正しく保たれます。ただし、変更・削除で残高が途中でマイナスになる場合（先に貯金から使っている場合）はできません。先に貯金からの支出を変更・削除してください。</p>
         </section>
 
         <section id="masters" aria-labelledby="h-masters">
           <h2 id="h-masters">カテゴリ・支払方法</h2>
-          <p>メニュー「管理」→「カテゴリ・支払方法…」で、追加・名前の変更・並べ替え・削除ができます。明細や固定費で使われているものは、削除の代わりに「無効」になります（過去の明細には残り、新しい入力の選択肢から消えます）。「無効も表示」にチェックすると、有効に戻せます。</p>
+          <p>メニュー「管理」→「カテゴリ・支払方法…」で、追加・名前の変更・並べ替え・削除ができます。カテゴリは「収入／支出／投資・積立／貯金の種類」ごとに管理します。明細や固定費で使われているものは、削除の代わりに「無効」になります（過去の明細には残り、新しい入力の選択肢から消えます）。「無効も表示」にチェックすると、有効に戻せます。</p>
         </section>
 
         <section id="password" aria-labelledby="h-password">
@@ -242,13 +289,15 @@
               <thead><tr><th scope="col">列名</th><th scope="col">必須</th><th scope="col">書き方</th></tr></thead>
               <tbody>
                 <tr><td>日付</td><td>○</td><td>2026/10/04 など（Excel の日付でも可）</td></tr>
-                <tr><td>種類</td><td>○</td><td>収入／支出／投資・積立</td></tr>
+                <tr><td>種類</td><td>○</td><td>収入／支出／投資・積立／貯金</td></tr>
                 <tr><td>項目</td><td>○</td><td>例: スーパー</td></tr>
                 <tr><td>金額</td><td>○</td><td>整数の円（1,200 や 1200円 も可）</td></tr>
                 <tr><td>カテゴリ</td><td>○</td><td>アプリに登録済みの名前と同じにする</td></tr>
                 <tr><td>固定/変動</td><td></td><td>固定／変動（空欄なら変動）</td></tr>
                 <tr><td>支払方法</td><td></td><td>登録済みの名前（収入の行は空欄）</td></tr>
                 <tr><td>メモ</td><td></td><td>自由</td></tr>
+                <tr><td>貯金口座</td><td></td><td>貯金なら入金先（必須）。支出なら貯金から支払った口座</td></tr>
+                <tr><td>積立の目的</td><td></td><td>貯金のみ。登録済みの目的の名前（空欄なら積立ではない貯金）</td></tr>
               </tbody>
             </table>
           </div>
@@ -328,7 +377,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/site-config.js?v=20261022c"></script>
-  <script src="assets/js/main.js?v=20261022c"></script>
+  <script src="assets/js/site-config.js?v=20261023a"></script>
+  <script src="assets/js/main.js?v=20261023a"></script>
 </body>
 </html>
