@@ -22,13 +22,13 @@ window.SITE_CONFIG = {
 
   // ---- 最新リリース ----
   release: {
-    version: "0.3.0",                              // 確定（アプリ内のバージョン）
-    fileName: "Manemane-0.3.0-windows.zip",        // 確定（配布する ZIP の名前）
-    fileSizeBytes: 94116220,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
-    sha256: "3ebce8409be624f014f287e19fbccc0936fda8511d4fc32a0529dd5c9e5bfaa3", // 同上
+    version: "0.4.0",                              // 確定（アプリ内のバージョン）
+    fileName: "Manemane-0.4.0-windows.zip",        // 確定（配布する ZIP の名前）
+    fileSizeBytes: 94120604,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
+    sha256: "0f0f175024b12efd3a2d7f62e98ca313958b57486668268bde989eab9b5266fd", // 同上
     releaseDate: "2026-10-24",                     // GitHub Releases で公開した日
     // 一般公開している GitHub Releases の ZIP の URL（null にするとボタンが「公開準備中」になる）
-    downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.3.0/Manemane-0.3.0-windows.zip",
+    downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.4.0/Manemane-0.4.0-windows.zip",
   },
 
   // ---- 公開先・連絡先（未確定） ----
@@ -44,6 +44,15 @@ window.SITE_CONFIG = {
   // ---- 更新履歴（実際の変更内容。新しい順） ----
   // date は「公開した日」。未公開のものは null（表示は「未公開」）
   changelog: [
+    {
+      version: "0.4.0",
+      date: "2026-10-24",
+      items: [
+        "貯金口座に「最初の残高」を設定できるように（アプリを使い始める前から口座にあったお金）",
+        "最初の残高は口座の残高・貯金残高に足し、貯金から支出にも使える（家計の残額・今月の貯金額・入金の累計・積立には含めない）",
+        "データの形式を更新（0.4.0 で開いたデータは以前のバージョンでは開けません。更新前にバックアップを取ってください）"
+      ]
+    },
     {
       version: "0.3.0",
       date: "2026-10-24",
