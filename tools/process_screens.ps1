@@ -1,5 +1,5 @@
 ﻿# Copies captured screenshots into assets/img/screens and builds the OGP image.
-# Usage: powershell -ExecutionPolicy Bypass -File tools\process_screens.ps1 -In <folder with main.png and any of entry/year/help/filter/settings/login/savings/savings-chart/savings-entry/points.png>
+# Usage: powershell -ExecutionPolicy Bypass -File tools\process_screens.ps1 -In <folder with main.png and any of entry/year/help/filter/settings/login/savings/savings-chart/savings-entry/points/savings-accounts.png>
 param([string]$In, [string]$Root = (Resolve-Path "$PSScriptRoot\..").Path)
 Add-Type -AssemblyName System.Drawing
 $out = Join-Path $Root 'assets\img\screens'
@@ -19,7 +19,7 @@ function Save-Cropped([string]$name, [int]$bottom) {
 # メイン画面はステータスバー（DB の保存場所の表示）を切り取る
 $main = Save-Cropped 'main' 36
 # そのほかの画面は、撮り直したものだけをそのまま差し替える
-foreach ($n in 'entry', 'year', 'help', 'filter', 'settings', 'login', 'savings', 'savings-chart', 'savings-entry', 'points') {
+foreach ($n in 'entry', 'year', 'help', 'filter', 'settings', 'login', 'savings', 'savings-chart', 'savings-entry', 'points', 'savings-accounts') {
   if (Test-Path (Join-Path $In "$n.png")) { (Save-Cropped $n 0).Dispose() }
 }
 

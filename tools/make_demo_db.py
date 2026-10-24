@@ -2,10 +2,11 @@
 スクリーンショット撮影用のデモデータ（架空）を作る。
 
 使い方:
-  python make_demo_db.py <アプリのソースの V1__init.sql> <出力する .db> [<V2__savings.sql> [<V3__merge_investment.sql> [<V4__point_payment.sql>]]]
+  python make_demo_db.py <アプリのソースの V1__init.sql> <出力する .db> [<V2__savings.sql> [<V3__merge_investment.sql> [<V4__point_payment.sql> [<V5__savings_opening_balance.sql>]]]]
   V2 を指定すると、貯金・積立のデータ（口座・積立の目的・入金・貯金からの支出）も入れる。
   V3 を指定すると、投資・積立の明細と固定費が「投資口座」への積立に移る（アプリの更新と同じ処理）。
   V4 を指定すると、ポイント払いの明細も入れる。
+  V5 を指定すると、貯金口座に最初の残高（アプリを使い始める前からあったお金）を入れる。
 アプリは -PkakeiboDb=<出力した .db> を付けて起動する（本番のデータには触れない）。
 """
 import sqlite3
@@ -16,6 +17,7 @@ schema, out = sys.argv[1], sys.argv[2]
 savings_schema = sys.argv[3] if len(sys.argv) > 3 else None
 merge_schema = sys.argv[4] if len(sys.argv) > 4 else None
 points_schema = sys.argv[5] if len(sys.argv) > 5 else None
+opening_schema = sys.argv[6] if len(sys.argv) > 6 else None
 db = sqlite3.connect(out)
 db.executescript(open(schema, encoding="utf-8").read())
 now = "2026-10-20T10:00:00"
@@ -124,5 +126,10 @@ if points_schema:
         db.execute("INSERT INTO entry(entry_type, is_fixed, entry_date, title, amount, category_id, paid_with_points,"
                    " created_at, updated_at) VALUES ('EXPENSE', 0, ?, ?, ?, ?, 1, ?, ?)",
                    (d, title, amount, cat("EXPENSE", category), now, now))
+
+if opening_schema:
+    db.executescript(open(opening_schema, encoding="utf-8").read())
+    db.execute("INSERT INTO schema_version VALUES (5, '貯金口座の最初の残高', ?)", (now,))
+    db.execute("UPDATE savings_account SET opening_balance = 150000 WHERE name = '貯金口座'")
 db.commit()
 print("entries:", db.execute("SELECT COUNT(*) FROM entry").fetchone()[0])
