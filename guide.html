@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261024e">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261024f">
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -66,6 +66,7 @@
           <li><a href="#savings">貯金・積立</a></li>
           <li><a href="#masters">カテゴリ・支払方法</a></li>
           <li><a href="#password">起動時のパスワード</a></li>
+          <li><a href="#theme">画面の色と背景の柄</a></li>
           <li><a href="#backup">バックアップと PC の移行</a></li>
           <li><a href="#excel">Excel の書き出し・取り込み</a></li>
           <li><a href="#keys">キーボードの操作</a></li>
@@ -95,7 +96,7 @@
           <p>初回起動時に「Windows によって PC が保護されました」と表示された場合は、「詳細情報」→「実行」を選んでください。署名のない個人開発のアプリのため表示されます。</p>
           <h3>新しいバージョンにするとき</h3>
           <p>新しい ZIP を別のフォルダに展開して <code>Manemane.exe</code> を起動してください。データ（<code>%APPDATA%\Manemane\kakeibo.db</code>）はそのまま引き継がれます。</p>
-          <p class="callout">0.4.0 で一度開くとデータの形式が新しくなり、以前のバージョンでは開けなくなります。更新する前に、今のバージョンの「ファイル」→「バックアップ…」でバックアップを取っておいてください（以前のバージョンのバックアップは 0.4.0 で復元できます）。以前の「投資・積立」の記録は、自動で口座「投資口座」への積立に移ります。</p>
+          <p class="callout">0.3.0 以前から更新する場合は、0.4.0 以降で一度開くとデータの形式が新しくなり、以前のバージョンでは開けなくなります。更新する前に、今のバージョンの「ファイル」→「バックアップ…」でバックアップを取っておいてください（以前のバージョンのバックアップは新しいバージョンで復元できます）。0.4.0 から 0.4.1 への更新では、データの形式は変わりません。以前の「投資・積立」の記録は、自動で口座「投資口座」への積立に移ります。</p>
         </section>
 
         <section id="setup" aria-labelledby="h-setup">
@@ -285,6 +286,16 @@
           <p class="callout"><strong>パスワードを忘れると、アプリを開けなくなります</strong>（再設定の方法はありません）。また、これはアプリを開くときの確認で、データのファイル自体は暗号化されません。バックアップから復元すると、パスワードの設定もバックアップした時点のものに戻ります。</p>
         </section>
 
+        <section id="theme" aria-labelledby="h-theme">
+          <h2 id="h-theme">画面の色と背景の柄</h2>
+          <p>メニュー「設定」→「設定…」の「画面の色」と「背景の柄」で、見た目を変えられます。選ぶとすぐに画面に反映され、「保存」すると次に起動したときもその設定で開きます（「キャンセル」で元に戻ります）。</p>
+          <ul>
+            <li><strong>画面の色</strong> … スタンダード／シンプル（白・グレー）／さくら（パステル・ピンク）／ミント（パステル・緑）／ラベンダー（パステル・紫）／そら（パステル・水色）／ダーク（夜向け）</li>
+            <li><strong>背景の柄</strong> … なし／ドット／ストライプ／ギンガムチェック／方眼。メイン画面のカードのすき間にだけ付き、金額のカードや表は無地のままです。</li>
+          </ul>
+          <p class="callout">どの色でも、固定費＝青・変動費＝緑・貯金＝橙・ポイント＝紫・マイナス＝赤という色の意味は同じです。パステルの色では帯やグラフを淡くし、金額などの文字は濃い色のまま表示します。ダークでも、ウィンドウのいちばん上の帯（タイトルバー）は Windows の色のままです。</p>
+        </section>
+
         <section id="backup" aria-labelledby="h-backup">
           <h2 id="h-backup">バックアップと PC の移行</h2>
           <ul>
@@ -399,7 +410,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/site-config.js?v=20261024e"></script>
-  <script src="assets/js/main.js?v=20261024e"></script>
+  <script src="assets/js/site-config.js?v=20261024f"></script>
+  <script src="assets/js/main.js?v=20261024f"></script>
 </body>
 </html>

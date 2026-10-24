@@ -22,13 +22,13 @@ window.SITE_CONFIG = {
 
   // ---- 最新リリース ----
   release: {
-    version: "0.4.0",                              // 確定（アプリ内のバージョン）
-    fileName: "Manemane-0.4.0-windows.zip",        // 確定（配布する ZIP の名前）
-    fileSizeBytes: 94120604,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
-    sha256: "0f0f175024b12efd3a2d7f62e98ca313958b57486668268bde989eab9b5266fd", // 同上
+    version: "0.4.1",                              // 確定（アプリ内のバージョン）
+    fileName: "Manemane-0.4.1-windows.zip",        // 確定（配布する ZIP の名前）
+    fileSizeBytes: 94134940,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
+    sha256: "1cf13052d9dc928cfda69d7cdb0edc76c1a62f4bc02b963fa27a62f98fab6d6f", // 同上
     releaseDate: "2026-10-24",                     // GitHub Releases で公開した日
     // 一般公開している GitHub Releases の ZIP の URL（null にするとボタンが「公開準備中」になる）
-    downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.4.0/Manemane-0.4.0-windows.zip",
+    downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.4.1/Manemane-0.4.1-windows.zip",
   },
 
   // ---- 公開先・連絡先（未確定） ----
@@ -44,6 +44,15 @@ window.SITE_CONFIG = {
   // ---- 更新履歴（実際の変更内容。新しい順） ----
   // date は「公開した日」。未公開のものは null（表示は「未公開」）
   changelog: [
+    {
+      version: "0.4.1",
+      date: "2026-10-24",
+      items: [
+        "「設定」で画面の色（テーマ）を選べるように（スタンダード／シンプル／さくら・ミント・ラベンダー・そら（パステル）／ダーク）",
+        "背景の柄を選べるように（ドット／ストライプ／ギンガムチェック／方眼。メイン画面のカードのすき間だけ）",
+        "どのテーマでも色の意味（固定費＝青・変動費＝緑・貯金＝橙・ポイント＝紫・マイナス＝赤）は同じ"
+      ]
+    },
     {
       version: "0.4.0",
       date: "2026-10-24",
