@@ -2,8 +2,10 @@
 スクリーンショット撮影用のデモデータ（架空）を作る。
 
 使い方:
-  python make_demo_db.py <アプリのソースの V1__init.sql> <出力する .db> [<V2__savings.sql>]
+  python make_demo_db.py <アプリのソースの V1__init.sql> <出力する .db> [<V2__savings.sql> [<V3__merge_investment.sql> [<V4__point_payment.sql>]]]
   V2 を指定すると、貯金・積立のデータ（口座・積立の目的・入金・貯金からの支出）も入れる。
+  V3 を指定すると、投資・積立の明細と固定費が「投資口座」への積立に移る（アプリの更新と同じ処理）。
+  V4 を指定すると、ポイント払いの明細も入れる。
 アプリは -PkakeiboDb=<出力した .db> を付けて起動する（本番のデータには触れない）。
 """
 import sqlite3
@@ -12,6 +14,8 @@ from datetime import date, timedelta
 
 schema, out = sys.argv[1], sys.argv[2]
 savings_schema = sys.argv[3] if len(sys.argv) > 3 else None
+merge_schema = sys.argv[4] if len(sys.argv) > 4 else None
+points_schema = sys.argv[5] if len(sys.argv) > 5 else None
 db = sqlite3.connect(out)
 db.executescript(open(schema, encoding="utf-8").read())
 now = "2026-10-20T10:00:00"
@@ -101,5 +105,24 @@ if savings_schema:
     add("INCOME", 1, "2026-10-23", "給与", 250000, "給与")
     save("2026-10-23", 20000, "ネット銀行", "旅行")
     save("2026-10-23", 10000, "貯金口座", "生活防衛資金")
+
+if merge_schema:
+    # 毎月の投資・積立の固定費（V3 で「投資口座」への「貯金」の固定費になる）
+    db.execute("INSERT INTO fixed_cost(name, entry_type, amount, pay_day, category_id, payment_method_id, created_at,"
+               " updated_at) VALUES ('つみたて投資', 'INVESTMENT', 30000, 27, ?, ?, ?, ?)",
+               (cat("INVESTMENT", "積立"), pm("銀行振込"), now, now))
+    db.executescript(open(merge_schema, encoding="utf-8").read())
+    db.execute("INSERT INTO schema_version VALUES (3, '投資・積立を貯金に統合', ?)", (now,))
+
+if points_schema:
+    db.executescript(open(points_schema, encoding="utf-8").read())
+    db.execute("INSERT INTO schema_version VALUES (4, 'ポイント払い', ?)", (now,))
+    # ポイントで支払った支出（家計の残額は減らさない）
+    for d, title, amount, category in [("2026-08-30", "カフェ", 650, "食費"), ("2026-09-10", "日用品", 1200, "買い物"),
+                                       ("2026-10-06", "コンビニ", 540, "食費"),
+                                       ("2026-10-09", "ドラッグストア", 880, "買い物")]:
+        db.execute("INSERT INTO entry(entry_type, is_fixed, entry_date, title, amount, category_id, paid_with_points,"
+                   " created_at, updated_at) VALUES ('EXPENSE', 0, ?, ?, ?, ?, 1, ?, ?)",
+                   (d, title, amount, cat("EXPENSE", category), now, now))
 db.commit()
 print("entries:", db.execute("SELECT COUNT(*) FROM entry").fetchone()[0])

@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261024a">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261024b">
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -116,7 +116,7 @@
         <section id="screen" aria-labelledby="h-screen">
           <h2 id="h-screen">メイン画面の見方</h2>
           <figure>
-            <img src="assets/img/screens/main.png" width="1424" height="838" loading="lazy" alt="メイン画面">
+            <img src="assets/img/screens/main.png" width="1424" height="858" loading="lazy" alt="メイン画面">
             <figcaption>メイン画面（金額は説明用の架空のデータです）</figcaption>
           </figure>
           <div class="table-wrap">
@@ -158,7 +158,7 @@
           <h2 id="h-entries">明細の登録・編集</h2>
           <p>「+ 支出」または「+ 収入」を押して入力し、「保存」を押します。</p>
           <figure>
-            <img src="assets/img/screens/entry.png" width="462" height="463" loading="lazy" alt="支出を追加する画面">
+            <img src="assets/img/screens/entry.png" width="462" height="463" loading="lazy" alt="支出を追加する画面。支払元に「ポイント（残額から引かない）」を選んでいる">
           </figure>
           <ul>
             <li><strong>区分</strong> … 支出は「固定費／変動費」、収入は「固定／変動」（貯金・積立は「+ 貯金」から登録します）。</li>
@@ -175,6 +175,10 @@
           <p class="callout">電子マネー（PayPay・交通系 IC など）は「チャージした金額」を支出として登録し、カテゴリを「電子マネーチャージ」にします。チャージ残高から払った買い物は、二重になるため登録しません。</p>
           <h3 id="points">ポイント払い</h3>
           <p>楽天ポイント・dポイントなどで支払った買い物は、支払元を「ポイント（残額から引かない）」にして登録します。</p>
+          <figure>
+            <img src="assets/img/screens/points.png" width="880" height="257" loading="lazy" alt="明細の一覧を「ポイント払い」で絞り込んだところ。ポイントで払った明細（区分は紫の帯の「ポイント払い」）と、右側の「ポイントで得した額」（今月 1,420 円・累計 3,270 円）">
+            <figcaption>「ポイント払い」で絞り込んだ明細と、ポイントで得した額</figcaption>
+          </figure>
           <ul>
             <li>家計のお金は減らないため、残額・支出合計・カテゴリ別の支出には含めません。</li>
             <li>明細一覧では区分が「ポイント払い」（紫の帯）になります。</li>
@@ -204,7 +208,7 @@
           <h3>年間の収支</h3>
           <p>メニュー「集計」→「年間の収支…」で、1月1日〜12月31日の収入合計・支出合計・収支と、月別の表を確認できます。給料日の期間ではなく、明細の日付で集計します（繰越は含みません）。支出合計には貯金への入金を含みます。「貯金から支出」「ポイント払い」は家計の収支に含めない参考の列です。</p>
           <figure>
-            <img src="assets/img/screens/year.png" width="1062" height="852" loading="lazy" alt="年間の収支の画面">
+            <img src="assets/img/screens/year.png" width="1092" height="852" loading="lazy" alt="年間の収支の画面">
           </figure>
         </section>
 
@@ -388,7 +392,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/site-config.js?v=20261024a"></script>
-  <script src="assets/js/main.js?v=20261024a"></script>
+  <script src="assets/js/site-config.js?v=20261024b"></script>
+  <script src="assets/js/main.js?v=20261024b"></script>
 </body>
 </html>

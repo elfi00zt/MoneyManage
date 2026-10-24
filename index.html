@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261024a">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261024b">
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -66,8 +66,8 @@
           </ul>
         </div>
         <figure class="shot-frame">
-          <img src="assets/img/screens/main.png" width="1424" height="838"
-               alt="まねまね(MoneyManage) のメイン画面。期間 2026/09/25〜10/22 の収入・前月繰越・利用可能金額・固定費・変動費・投資・積立・貯金残高・貯金・残額のカードと、明細の一覧、カテゴリ別の支出グラフが表示されている">
+          <img src="assets/img/screens/main.png" width="1424" height="858"
+               alt="まねまね(MoneyManage) のメイン画面。期間 2026/09/25〜10/22 の収入・前月繰越・利用可能金額・固定費・変動費・貯金・積立・残額のカードと、明細の一覧、前月との比較・ポイントで得した額・カテゴリ別の支出が表示されている">
         </figure>
       </div>
     </section>
@@ -104,7 +104,7 @@
           <article class="feature">
             <span class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
             <h3>カテゴリ別・年間の集計</h3>
-            <p>期間ごとのカテゴリ別の支出と前月比較、1月〜12月の年間収支を確認できます。</p>
+            <p>期間ごとのカテゴリ別の支出と前月比較、1月〜12月の年間収支、ポイントで得した額の累計を確認できます。</p>
           </article>
           <article class="feature">
             <span class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8l8 8M16 8l-8 8"/></svg></span>
@@ -141,22 +141,22 @@
         <div class="screens">
           <figure class="screen screen-wide">
             <button type="button" data-zoom="メイン画面">
-              <img src="assets/img/screens/main.png" width="1424" height="838" loading="lazy"
-                   alt="メイン画面。上部に期間、カードに収入・前月繰越・利用可能金額・固定費・変動費・投資・積立・貯金残高・貯金・残額、下に明細の一覧と分析パネル">
+              <img src="assets/img/screens/main.png" width="1424" height="858" loading="lazy"
+                   alt="メイン画面。上部に期間、カードに収入・前月繰越・利用可能金額・固定費・変動費・貯金・積立・残額、下に明細の一覧と、ポイントで得した額などの分析パネル">
             </button>
             <figcaption><strong>メイン画面</strong>期間の残額と、収入・支出の内訳、明細、カテゴリ別の支出を1画面で確認できます。</figcaption>
           </figure>
           <figure class="screen">
             <button type="button" data-zoom="明細の入力">
               <img src="assets/img/screens/entry.png" width="462" height="463" loading="lazy"
-                   alt="支出を追加する画面。種類・区分・日付・金額・項目・カテゴリ・支払方法・メモの入力欄">
+                   alt="支出を追加する画面。種類・区分・日付・金額・項目・カテゴリ・支払方法・支払元（ポイントを選択）・メモの入力欄">
             </button>
-            <figcaption><strong>明細の入力</strong>項目名を入力すると過去の内容から候補を表示します。</figcaption>
+            <figcaption><strong>明細の入力</strong>項目名は過去の内容から候補を表示。支払元でポイント・貯金口座も選べます。</figcaption>
           </figure>
           <figure class="screen">
             <button type="button" data-zoom="年間の収支">
-              <img src="assets/img/screens/year.png" width="1062" height="852" loading="lazy"
-                   alt="年間の収支の画面。収入合計・支出合計・収支と、1月〜12月の月別の表">
+              <img src="assets/img/screens/year.png" width="1092" height="852" loading="lazy"
+                   alt="年間の収支の画面。収入合計・支出合計・収支と、1月〜12月の月別の表（貯金から支出・ポイント払いの列を含む）">
             </button>
             <figcaption><strong>年間の収支</strong>1月〜12月の月別の収入・支出と年間の合計。</figcaption>
           </figure>
@@ -194,6 +194,20 @@
                    alt="貯金の推移の画面。期間ごとの貯金額・積立額・積立目標・貯金からの支出の表と棒グラフ、貯金残高の折れ線グラフ">
             </button>
             <figcaption><strong>貯金の推移</strong>期間ごと・年ごとの貯金額と積立目標、残高の推移をグラフで表示します。</figcaption>
+          </figure>
+          <figure class="screen screen-span2">
+            <button type="button" data-zoom="ポイント払い">
+              <img src="assets/img/screens/points.png" width="880" height="257" loading="lazy"
+                   alt="明細の一覧を「ポイント払い」で絞り込んだところ。ポイントで払ったコンビニ・ドラッグストアの明細と、ポイントで得した額（今月 1,420 円・累計 3,270 円）">
+            </button>
+            <figcaption><strong>ポイント払い</strong>ポイントで払った買い物は残額から差し引かず、「ポイントで得した額」として今月の合計と累計を表示します。</figcaption>
+          </figure>
+          <figure class="screen">
+            <button type="button" data-zoom="貯金の入力">
+              <img src="assets/img/screens/savings-entry.png" width="462" height="475" loading="lazy"
+                   alt="貯金の入力画面。日付・貯金額・貯金口座・積立の目的・貯金の種類・項目・メモ">
+            </button>
+            <figcaption><strong>貯金の入力</strong>貯金口座と積立の目的を選んで記録します。貯金した額は残額から差し引かれます。</figcaption>
           </figure>
         </div>
       </div>
@@ -364,7 +378,7 @@
     <img src="" alt="">
   </dialog>
 
-  <script src="assets/js/site-config.js?v=20261024a"></script>
-  <script src="assets/js/main.js?v=20261024a"></script>
+  <script src="assets/js/site-config.js?v=20261024b"></script>
+  <script src="assets/js/main.js?v=20261024b"></script>
 </body>
 </html>
