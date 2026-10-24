@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261024b">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261024c">
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -123,7 +123,7 @@
             <table>
               <thead><tr><th scope="col">表示</th><th scope="col">内容</th></tr></thead>
               <tbody>
-                <tr><td>期間</td><td>給料日から次の給料日の前日まで。最新の期間の終了日は「次の給料日（予定）の前日」で、（予定）と表示されます。</td></tr>
+                <tr><td>期間</td><td>給料日から次の給料日の前日まで。最新の期間の終了日は、次の給料日（土日の場合は直前の金曜日）の前日です。開始日を間違えたときは、期間の下の「開始日を変更」で直せます。</td></tr>
                 <tr><td>収入</td><td>期間内の収入の合計</td></tr>
                 <tr><td>前月繰越</td><td>前の期間の残額（不足ならマイナス）</td></tr>
                 <tr><td>利用可能金額</td><td>収入 ＋ 前月繰越</td></tr>
@@ -194,6 +194,8 @@
           <p>「有効な固定費を新しい期間に反映する」にチェックがあると、登録済みの固定費が新しい期間に自動で登録されます。</p>
           <h3>繰越</h3>
           <p>期間の残額は、プラスもマイナスも次の期間の「前月繰越」へ自動で引き継がれます。「前月繰越」カードの「編集」から手入力で上書きでき、「自動計算」に戻すこともできます。</p>
+          <h3>開始日を間違えたとき</h3>
+          <p>期間の下の「開始日を変更」を押します。通常の給料日（土日の場合は直前の金曜日）が入っているので、確認して「変更」を押してください。前の期間の終了日も一緒に変わり、明細は日付に合わせてどちらかの期間に振り分けられます（例: 25日払いで 10/25(日) と入力してしまった → 10/23(金) に変更すると、前の期間は 9/25〜10/22 になります）。</p>
         </section>
 
         <section id="fixed" aria-labelledby="h-fixed">
@@ -392,7 +394,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/site-config.js?v=20261024b"></script>
-  <script src="assets/js/main.js?v=20261024b"></script>
+  <script src="assets/js/site-config.js?v=20261024c"></script>
+  <script src="assets/js/main.js?v=20261024c"></script>
 </body>
 </html>

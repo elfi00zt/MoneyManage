@@ -24,8 +24,8 @@ window.SITE_CONFIG = {
   release: {
     version: "0.3.0",                              // 確定（アプリ内のバージョン）
     fileName: "Manemane-0.3.0-windows.zip",        // 確定（配布する ZIP の名前）
-    fileSizeBytes: 94111482,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
-    sha256: "acc85ce29c81120e4fa210b3026c7512297bf7c3838b65216be9593316418923", // 同上
+    fileSizeBytes: 94116220,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
+    sha256: "3ebce8409be624f014f287e19fbccc0936fda8511d4fc32a0529dd5c9e5bfaa3", // 同上
     releaseDate: "2026-10-24",                     // GitHub Releases で公開した日
     // 一般公開している GitHub Releases の ZIP の URL（null にするとボタンが「公開準備中」になる）
     downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.3.0/Manemane-0.3.0-windows.zip",
@@ -53,6 +53,8 @@ window.SITE_CONFIG = {
         "年間の収支・Excel の書き出し／取り込みに「ポイント払い」の列を追加",
         "「投資・積立」を貯金の積立に統合（これまでの記録は口座「投資口座」への積立に自動で移ります）",
         "固定費に「貯金」を追加（期間に反映すると、口座・積立の目的付きの貯金として登録）",
+        "期間の開始日（給料日）を後から変更できるように（前の期間の終了日も一緒に変わる）",
+        "期間の表示から「（予定）」をなくした",
         "データの形式を更新（0.3.0 で開いたデータは以前のバージョンでは開けません。更新前にバックアップを取ってください）"
       ]
     },
