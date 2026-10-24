@@ -22,13 +22,13 @@ window.SITE_CONFIG = {
 
   // ---- 最新リリース ----
   release: {
-    version: "0.2.0",                              // 確定（アプリ内のバージョン）
-    fileName: "Manemane-0.2.0-windows.zip",        // 確定（配布する ZIP の名前）
-    fileSizeBytes: 94100753,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
-    sha256: "fa3b81b73773f0efebce3d262d57fdef3174f9a6dbe128b676c1bb750a3bddfa", // 同上
-    releaseDate: "2026-10-23",                     // GitHub Releases で公開した日
+    version: "0.3.0",                              // 確定（アプリ内のバージョン）
+    fileName: "Manemane-0.3.0-windows.zip",        // 確定（配布する ZIP の名前）
+    fileSizeBytes: 94111482,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
+    sha256: "acc85ce29c81120e4fa210b3026c7512297bf7c3838b65216be9593316418923", // 同上
+    releaseDate: "2026-10-24",                     // GitHub Releases で公開した日
     // 一般公開している GitHub Releases の ZIP の URL（null にするとボタンが「公開準備中」になる）
-    downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.2.0/Manemane-0.2.0-windows.zip",
+    downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.3.0/Manemane-0.3.0-windows.zip",
   },
 
   // ---- 公開先・連絡先（未確定） ----
@@ -44,6 +44,18 @@ window.SITE_CONFIG = {
   // ---- 更新履歴（実際の変更内容。新しい順） ----
   // date は「公開した日」。未公開のものは null（表示は「未公開」）
   changelog: [
+    {
+      version: "0.3.0",
+      date: "2026-10-24",
+      items: [
+        "支出の「支払元」に「ポイント」を追加（残額・支出合計・カテゴリ別の支出から差し引かない）",
+        "メイン画面に「ポイントで得した額」（今月と累計）と「ポイント払い」の絞り込み",
+        "年間の収支・Excel の書き出し／取り込みに「ポイント払い」の列を追加",
+        "「投資・積立」を貯金の積立に統合（これまでの記録は口座「投資口座」への積立に自動で移ります）",
+        "固定費に「貯金」を追加（期間に反映すると、口座・積立の目的付きの貯金として登録）",
+        "データの形式を更新（0.3.0 で開いたデータは以前のバージョンでは開けません。更新前にバックアップを取ってください）"
+      ]
+    },
     {
       version: "0.2.0",
       date: "2026-10-23",
