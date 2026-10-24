@@ -22,13 +22,13 @@ window.SITE_CONFIG = {
 
   // ---- 最新リリース ----
   release: {
-    version: "0.4.1",                              // 確定（アプリ内のバージョン）
-    fileName: "Manemane-0.4.1-windows.zip",        // 確定（配布する ZIP の名前）
-    fileSizeBytes: 94134940,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
-    sha256: "1cf13052d9dc928cfda69d7cdb0edc76c1a62f4bc02b963fa27a62f98fab6d6f", // 同上
+    version: "0.4.2",                              // 確定（アプリ内のバージョン）
+    fileName: "Manemane-0.4.2-windows.zip",        // 確定（配布する ZIP の名前）
+    fileSizeBytes: 94152526,                       // 確定（現在のビルド。ZIP を作り直したら更新する）
+    sha256: "4d73b22efbbb166611cb08b4bfd35a0c41d8d84a3ed6fd2bbb71fe814b6cd8cf", // 同上
     releaseDate: "2026-10-24",                     // GitHub Releases で公開した日
     // 一般公開している GitHub Releases の ZIP の URL（null にするとボタンが「公開準備中」になる）
-    downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.4.1/Manemane-0.4.1-windows.zip",
+    downloadUrl: "https://github.com/elfi00zt/MoneyManage/releases/download/v0.4.2/Manemane-0.4.2-windows.zip",
   },
 
   // ---- 公開先・連絡先（未確定） ----
@@ -44,6 +44,15 @@ window.SITE_CONFIG = {
   // ---- 更新履歴（実際の変更内容。新しい順） ----
   // date は「公開した日」。未公開のものは null（表示は「未公開」）
   changelog: [
+    {
+      version: "0.4.2",
+      date: "2026-10-24",
+      items: [
+        "メイン画面に「アドバイス」を追加（残額のマイナスの見込み、いつもより多いカテゴリ、よい点、積立の残りなどを最大3件）",
+        "アドバイスは AI やインターネットを使わず、パソコンの中で決まったルールで判定（データは外に出ません）",
+        "「アドバイス」と「カテゴリ別の支出」をボタンで切り替えて表示（マイナスの見込みがあるとボタンが赤くなる）"
+      ]
+    },
     {
       version: "0.4.1",
       date: "2026-10-24",
