@@ -131,5 +131,11 @@ if opening_schema:
     db.executescript(open(opening_schema, encoding="utf-8").read())
     db.execute("INSERT INTO schema_version VALUES (5, '貯金口座の最初の残高', ?)", (now,))
     db.execute("UPDATE savings_account SET opening_balance = 150000 WHERE name = '貯金口座'")
+    # アドバイスの例が出るよう、サブスクの固定費と、9/25〜の期間の娯楽の出費を足す
+    for name, amount in [("動画配信サービス", 1490), ("音楽配信", 980)]:
+        db.execute("INSERT INTO fixed_cost(name, entry_type, amount, pay_day, category_id, payment_method_id,"
+                   " created_at, updated_at) VALUES (?, 'EXPENSE', ?, 28, ?, ?, ?, ?)",
+                   (name, amount, cat("EXPENSE", "サブスク"), pm("クレジットカード"), now, now))
+    add("EXPENSE", 0, "2026-10-10", "ライブ", 8800, "娯楽", "クレジットカード")
 db.commit()
 print("entries:", db.execute("SELECT COUNT(*) FROM entry").fetchone()[0])
